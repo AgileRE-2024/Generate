@@ -1,0 +1,513 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-padding-top: 2rem;
+    text-decoration: none;
+    list-style: none;
+    scroll-behavior: smooth;
+    font-family: 'Roboto';
+}
+
+.landing-page {
+    background-color: #f1dec6;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+  }
+  
+  .landing-page .div {
+    background-color: #f1dec6;
+    overflow: hidden;
+    width: 1280px;
+    height: 2540px;
+    position: relative;
+  }
+  
+  .landing-page .overlap {
+    position: absolute;
+    width: 431px;
+    height: 418px;
+    top: 194px;
+    left: 763px;
+  }
+  
+  .landing-page .rectangle {
+    position: absolute;
+    width: 336px;
+    height: 408px;
+    top: 10px;
+    left: 0;
+    border-radius: 27px;
+    border: 9px solid;
+    border-color: #000000;
+  }
+  
+  .landing-page .rectangle-2 {
+    position: absolute;
+    width: 315px;
+    height: 394px;
+    top: 17px;
+    left: 60px;
+    border-radius: 37px;
+    border: 2px solid;
+    border-color: #fe8b20;
+  }
+  
+  .landing-page .img {
+    position: absolute;
+    width: 339px;
+    height: 398px;
+    top: 0;
+    left: 92px;
+    object-fit: cover;
+  }
+  
+  .landing-page .image {
+    position: absolute;
+    width: 184px;
+    height: 166px;
+    top: 193px;
+    left: 39px;
+    object-fit: cover;
+  }
+  
+  .landing-page .vector {
+    position: absolute;
+    width: 184px;
+    height: 123px;
+    top: 261px;
+    left: 39px;
+  }
+  
+  .landing-page .overlap-group {
+    position: absolute;
+    width: 1280px;
+    height: 118px;
+    top: 0;
+    left: 0;
+    background-color: #ffffff;
+  }
+  
+  .landing-page .account-circle {
+    position: absolute;
+    width: 41px;
+    height: 40px;
+    top: 40px;
+    left: 1170px;
+  }
+  
+  .landing-page .tangkapan-layar {
+    position: absolute;
+    width: 79px;
+    height: 70px;
+    top: 26px;
+    left: 53px;
+    object-fit: cover;
+  }
+  
+  .landing-page .frame {
+    align-items: flex-end;
+    gap: 37px;
+    top: 51px;
+    left: 376px;
+    display: inline-flex;
+    position: absolute;
+  }
+  
+  .landing-page .frame-2 {
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
+    position: relative;
+    flex: 0 0 auto;
+  }
+  
+  .landing-page .text-wrapper {
+    position: relative;
+    width: fit-content;
+    margin-top: -1px;
+    font-family: "Roboto-Medium", Helvetica;
+    font-weight: 500;
+    color: #006d77;
+    font-size: 14px;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+  }
+  
+  .landing-page .text-wrapper-2 {
+    position: relative;
+    width: fit-content;
+    font-family: "Roboto-Medium", Helvetica;
+    font-weight: 500;
+    color: #000000;
+    font-size: 14px;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+  }
+  
+  .landing-page .keyboard-arrow-down {
+    position: relative;
+    width: 18px;
+    height: 18px;
+  }
+  
+  .landing-page .frame-3 {
+    align-items: center;
+    gap: 3px;
+    padding: 20px 32px;
+    top: 436px;
+    left: 85px;
+    background-color: #030303;
+    border-radius: 8px;
+    box-shadow: 0px 4px 4px #0000001a;
+    display: inline-flex;
+    position: absolute;
+  }
+  
+  .landing-page .text-wrapper-3 {
+    position: relative;
+    width: fit-content;
+    font-family: "Roboto-Medium", Helvetica;
+    font-weight: 500;
+    color: #ffffff;
+    font-size: 14px;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+  }
+  
+  .landing-page .frame-4 {
+    align-items: center;
+    gap: 3px;
+    padding: 20px 32px;
+    top: 436px;
+    left: 312px;
+    border-radius: 8px;
+    border: 1px solid;
+    border-color: #fe8b20;
+    box-shadow: 0px 4px 4px #0000001a;
+    display: inline-flex;
+    position: absolute;
+  }
+  
+  .landing-page .div-wrapper {
+    align-items: flex-start;
+    gap: 10px;
+    padding: 10px;
+    top: 254px;
+    left: 75px;
+    display: inline-flex;
+    position: absolute;
+  }
+  
+  .landing-page .text-wrapper-4 {
+    position: relative;
+    width: 636px;
+    margin-top: -1px;
+    font-family: "Roboto-SemiBold", Helvetica;
+    font-weight: 600;
+    color: #000000;
+    font-size: 53px;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  
+  .landing-page .frame-5 {
+    align-items: flex-start;
+    gap: 10px;
+    padding: 10px;
+    top: 345px;
+    left: 75px;
+    display: inline-flex;
+    position: absolute;
+  }
+  
+  .landing-page .p {
+    position: relative;
+    width: 646px;
+    margin-top: -1px;
+    font-family: "Roboto-Light", Helvetica;
+    font-weight: 300;
+    color: #444444;
+    font-size: 16px;
+    letter-spacing: 0;
+    line-height: 24px;
+  }
+  
+  .landing-page .rectangle-3 {
+    position: absolute;
+    width: 184px;
+    height: 191px;
+    top: 823px;
+    left: 2806px;
+  }
+  
+  .landing-page .blog {
+    position: absolute;
+    width: 1280px;
+    height: 521px;
+    top: 2019px;
+    left: 0;
+    background-color: #ffffff;
+    overflow: hidden;
+  }
+  
+  .landing-page .overlap-2 {
+    position: relative;
+    width: 1450px;
+    height: 477px;
+    top: 44px;
+    left: -27px;
+  }
+  
+  .landing-page .group {
+    position: absolute;
+    width: 1450px;
+    height: 425px;
+    top: 52px;
+    left: 0;
+  }
+  
+  .landing-page .text-wrapper-5 {
+    position: absolute;
+    top: 54px;
+    left: 199px;
+    font-family: "Roboto-SemiBold", Helvetica;
+    font-weight: 600;
+    color: #000000;
+    font-size: 18px;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+  }
+  
+  .landing-page .discover {
+    position: absolute;
+    top: 0;
+    left: 619px;
+    font-family: "Roboto-SemiBold", Helvetica;
+    font-weight: 600;
+    color: #000000;
+    font-size: 18px;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+  }
+  
+  .landing-page .useful-links {
+    position: absolute;
+    top: 0;
+    left: 940px;
+    font-family: "Roboto-SemiBold", Helvetica;
+    font-weight: 600;
+    color: #000000;
+    font-size: 18px;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+  }
+  
+  .landing-page .group-2 {
+    position: absolute;
+    width: 492px;
+    height: 122px;
+    top: 39px;
+    left: 619px;
+  }
+  
+  .landing-page .frame-6 {
+    align-items: center;
+    gap: 9px;
+    top: 0;
+    left: 321px;
+    display: inline-flex;
+    position: absolute;
+  }
+  
+  .landing-page .material-symbols {
+    position: relative;
+    width: 16px;
+    height: 16px;
+  }
+  
+  .landing-page .text-wrapper-6 {
+    position: relative;
+    width: fit-content;
+    margin-top: -1px;
+    font-family: "Roboto-SemiBold", Helvetica;
+    font-weight: 600;
+    color: #919191;
+    font-size: 15px;
+    letter-spacing: 0.75px;
+    line-height: normal;
+    white-space: nowrap;
+  }
+  
+  .landing-page .frame-7 {
+    align-items: center;
+    gap: 9px;
+    top: 34px;
+    left: 321px;
+    display: inline-flex;
+    position: absolute;
+  }
+  
+  .landing-page .frame-8 {
+    align-items: center;
+    gap: 9px;
+    top: 0;
+    left: 0;
+    display: inline-flex;
+    position: absolute;
+  }
+  
+  .landing-page .material-symbols-wrapper {
+    align-items: center;
+    gap: 9px;
+    top: 106px;
+    left: 238px;
+    display: inline-flex;
+    position: absolute;
+  }
+  
+  .landing-page .text-wrapper-7 {
+    position: absolute;
+    width: 255px;
+    top: 86px;
+    left: 199px;
+    font-family: "Roboto-Light", Helvetica;
+    font-weight: 300;
+    color: #444444;
+    font-size: 14px;
+    letter-spacing: 0;
+    line-height: 24px;
+  }
+  
+  .landing-page .user-story-tools-use-wrapper {
+    position: absolute;
+    width: 1440px;
+    height: 125px;
+    top: 300px;
+    left: 0;
+    background-color: #f88f2c;
+  }
+  
+  .landing-page .user-story-tools-use {
+    position: absolute;
+    width: 460px;
+    top: 46px;
+    left: 449px;
+    font-family: "Roboto-Light", Helvetica;
+    font-weight: 300;
+    color: #000000;
+    font-size: 14px;
+    letter-spacing: 0;
+    line-height: 24px;
+  }
+  
+  .landing-page .tangkapan-layar-2 {
+    position: absolute;
+    width: 79px;
+    height: 70px;
+    top: 0;
+    left: 194px;
+    object-fit: cover;
+  }
+  
+  .landing-page .overlap-wrapper {
+    position: absolute;
+    width: 1105px;
+    height: 295px;
+    top: 688px;
+    left: 93px;
+  }
+  
+  .landing-page .overlap-3 {
+    position: relative;
+    width: 1101px;
+    height: 295px;
+    background-color: #ffffff99;
+  }
+  
+  .landing-page .text-wrapper-8 {
+    position: absolute;
+    width: 610px;
+    height: 38px;
+    top: 33px;
+    left: 38px;
+    font-family: "Inter-Regular", Helvetica;
+    font-weight: 400;
+    color: #000000;
+    font-size: 30px;
+    letter-spacing: 0;
+    line-height: 38px;
+  }
+  
+  .landing-page .as-a-actor-i-want-to {
+    position: absolute;
+    width: 994px;
+    height: 114px;
+    top: 111px;
+    left: 38px;
+    font-family: "Inter-Regular", Helvetica;
+    font-weight: 400;
+    color: #000000;
+    font-size: 25px;
+    letter-spacing: 0;
+    line-height: 38px;
+  }
+  
+  .landing-page .back {
+    position: absolute;
+    width: 90px;
+    height: 50px;
+    top: 33px;
+    left: 987px;
+  }
+  
+  .landing-page .overlap-group-wrapper {
+    position: absolute;
+    width: 1105px;
+    height: 898px;
+    top: 1025px;
+    left: 93px;
+  }
+  
+  .landing-page .overlap-4 {
+    position: relative;
+    width: 1101px;
+    height: 898px;
+    background-color: #ffffff99;
+  }
+  
+  .landing-page .text-wrapper-9 {
+    position: absolute;
+    width: 406px;
+    height: 38px;
+    top: 28px;
+    left: 38px;
+    font-family: "Inter-Regular", Helvetica;
+    font-weight: 400;
+    color: #000000;
+    font-size: 30px;
+    letter-spacing: 0;
+    line-height: 38px;
+  }
+  
+  .landing-page .visit-the-generate {
+    position: absolute;
+    width: 994px;
+    height: 760px;
+    top: 103px;
+    left: 38px;
+    font-family: "Inter-Regular", Helvetica;
+    font-weight: 400;
+    color: #000000;
+    font-size: 25px;
+    letter-spacing: 0;
+    line-height: 38px;
+  }

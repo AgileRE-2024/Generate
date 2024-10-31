@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+  {% load static %}
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Generate</title>
+
+    {% comment %} {{-- link css --}} {% endcomment %}
+    <link rel="stylesheet" href="{% static 'css/home.css' %}" />
+  </head>
+
+  <body>
+    <div class="landing-page">
+      <div class="div">
+        <div class="overlap">
+          <div class="rectangle"></div>
+          <div class="rectangle-2"></div>
+          <img class="img" src="{% static 'images/rectangle-6.png' %}" />
+          <img class="image" src="{% static 'images/image2.png' %}" />
+          <img src="{% static 'images/Vector_orange.jpg' %}"></img>
+        </div>
+        <div class="overlap-group">
+          <a
+            href="{% static 'login.html' %}"
+            class="account-circle"
+            src="{% static 'images/account_circle.jpg' %}"
+          ></a>
+          <img
+            class="tangkapan-layar"
+            src="{% static 'images/generate_logo.png' %}"
+          />
+          <div class="frame">
+            <div class="frame-2"><div class="text-wrapper">Home</div></div>
+            <div class="frame-2">
+              <div class="text-wrapper-2">About</div>
+              <img
+                class="keyboard-arrow-down"
+                src="{% static 'images/back.png' %}"
+              />
+            </div>
+            <div class="frame-2">
+              <div class="text-wrapper-2">Pages</div>
+              <img
+                class="keyboard-arrow-down"
+                src="{% static 'images/back.png' %}"
+              />
+            </div>
+            <div class="frame-2">
+              <div class="text-wrapper-2">Blog</div>
+              <img
+                class="keyboard-arrow-down"
+                src="{% static 'images/back.png' %}"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="frame-3">
+          <div class="text-wrapper-3">Get Started</div>
+          <img
+            class="keyboard-arrow-down"
+            src="{% static 'images/Arrow_forward_blck.png' %}"
+          />
+        </div>
+        <div class="frame-4">
+          <div class="text-wrapper-2">How it works</div>
+          <img
+            class="keyboard-arrow-down"
+            src="{% static 'images/Arrow_forward_blck.png' %}"
+          />
+        </div>
+        <div class="div-wrapper">
+          <div class="text-wrapper-4">What is Generate?</div>
+        </div>
+        <div class="frame-5">
+          <p class="p">
+            Generate is an automated platform that transforms user stories into
+            user story scenarios, activity diagrams, and sequence diagrams to
+            streamline system design.
+          </p>
+        </div>
+        <img class="rectangle-3" src="img/rectangle-9.svg" />
+        <div class="blog">
+          <div class="overlap-2">
+            <div class="group">
+              <div class="text-wrapper-5">Generate</div>
+              <div class="discover">DISCOVER</div>
+              <div class="useful-links">USEFUL LINKS</div>
+              <div class="group-2">
+                <div class="frame-6">
+                  <img
+                    class="material-symbols"
+                    src="img/material-symbols-arrow-forward-ios-rounded-3.svg"
+                  />
+                  <div class="text-wrapper-6">Contact Us</div>
+                </div>
+                <div class="frame-7">
+                  <img
+                    class="material-symbols"
+                    src="img/material-symbols-arrow-forward-ios-rounded-2.svg"
+                  />
+                  <div class="text-wrapper-6">Terms &amp; Conditions</div>
+                </div>
+                <div class="frame-8">
+                  <img
+                    class="material-symbols"
+                    src="img/material-symbols-arrow-forward-ios-rounded.svg"
+                  />
+                  <div class="text-wrapper-6">Our Team</div>
+                </div>
+                <div class="material-symbols-wrapper">
+                  <div class="material-symbols"></div>
+                </div>
+              </div>
+              <p class="text-wrapper-7">
+                Seamlessly convert user stories into detailed use cases,
+                sequence diagrams, and activity diagrams. Streamline your
+                development process with automated, visual documentation that
+                ensures your team stays aligned from planning to implementation.
+              </p>
+              <div class="user-story-tools-use-wrapper">
+                <p class="user-story-tools-use">
+                  © User Story Tools &amp; Use Case Diagram Project, Airlangga
+                  University, 2024
+                </p>
+              </div>
+            </div>
+            <img
+              class="tangkapan-layar-2"
+              src="{% static 'images/generate_logo.png' %}"
+            />
+          </div>
+        </div>
+        <div class="overlap-wrapper">
+          <div class="overlap-3">
+            <p class="text-wrapper-8">
+              What is the correct format of a User Story?
+            </p>
+            <p class="as-a-actor-i-want-to">
+              &#34;As a [actor], I want to [goal] so that [benefit].&#34;<br />Example:
+              As a frequent traveler, I want to access my travel schedule
+              offline so that I don&#39;t have to worry about internet
+              connectivity while I&#39;m out of town.
+            </p>
+            <img class="back" src="{% static 'images/back.png' %}" />
+          </div>
+        </div>
+        <div class="overlap-group-wrapper">
+          <div class="overlap-4">
+            <div class="text-wrapper-9">How does it work?</div>
+            <p class="visit-the-generate">
+              Visit the “Generate” website<br />Create an account by entering
+              your name, email address, mobile number and password.<br />If the
+              account has been successfully created, you can login to start
+              generating<br />On the “home” page, we can create new projects,
+              can search for projects that we have created, and there is a
+              project list feature to see what our projects are.<br />To
+              generate User Story to User Story Scenario, we can fill in the
+              project title, project description, and user story text that we
+              want to generate.<br />If we have filled in these three things, we
+              can click generate to generate a User Story Scenario.<br />The
+              results will appear on a new page<br />We can click “See Project
+              List to see our project<br />There, we can see information about
+              the project, such as the project name, the date the project was
+              created, the last date the project was edited, and perform several
+              actions such as generate, edit, and delete.<br />To generate
+              Activity Diagram or Sequence Diagram, we can choose the orange
+              generate icon.<br />A new page will appear to choose what diagram
+              we want to generate.<br />If you have chosen, the results of the
+              generate diagram will appear on a new page
+            </p>
+            <img class="back" src="{% static 'images/back.png' %}" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

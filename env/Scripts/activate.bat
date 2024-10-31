@@ -8,7 +8,7 @@ if defined _OLD_CODEPAGE (
     "%SystemRoot%\System32\chcp.com" 65001 > nul
 )
 
-set VIRTUAL_ENV=D:\SEMESTER 5\PPL Prak\MINGGU 5\CaseDesigner\env
+set VIRTUAL_ENV=C:\Users\Dell Latitude 7280\Documents\Kuliah\Smt-5\Pembangunan Perangkat Lunak\Praktikum\project-generate\env
 
 if not defined PROMPT set PROMPT=$P$G
 
