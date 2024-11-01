@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generate</title>
+    {% comment %} {{-- link css --}} {% endcomment %}
+    <link rel="stylesheet" href="{% static 'css/login.css' %}" />
+</head>
+<body>
+
+    <div class="left-section">
+        <img src="% static images/logoo.png" alt="Logo" class="logo">
+    </div>
+
+    <div class="right-section">
+        <div class="login-form">
+            <h2>Login</h2>
+            <form action="#" method="POST">
+                <input type="email" name="email" placeholder="Email Address" required>
+
+                <div class="password-container">
+                    <input type="password" name="password" id="password" placeholder="Enter password" required>
+                    <span class="password-toggle" onclick="togglePasswordVisibility()">
+                        <img src="% static images/eye.png" alt="Show" id="toggleIcon" class="toggle-icon">
+                    </span>
+                </div>
+
+                <button type="submit">Login</button>
+            </form>
+            <div class="register">
+                <p>Don't have an account? <a href="% static #">Register</a></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="% static scripts.js"></script> 
+</body>
+</html>
