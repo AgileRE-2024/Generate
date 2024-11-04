@@ -1,4 +1,5 @@
 let classCounter = 1;
+let number = 1;
 
 function addClassSection() {
     const classContainer = document.getElementById("class-container");
