@@ -7,6 +7,10 @@ def home(request):
     context = {}
     return render(request, "generateApp/home.html", context)
 
-def login(request):
+def home(request):
+    context = {}
+    return render(request, "generateApp/register.html", context)
+
+def home(request):
     context = {}
     return render(request, "generateApp/login.html", context)

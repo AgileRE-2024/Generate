@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input User Story</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/2.5.0/remixicon.min.css">
+    <link rel="stylesheet" href="{% static 'css/inputUS.css' %}">
+</head>
+<body>
+    <header class="main-header">
+        <div class="logo">
+            <img src="{% static 'images/logoo.png' %}" alt="Generate Logo" class="logo-image"> <!-- Ganti "logo.png" dengan URL logo Anda -->
+        </div>
+        
+        <nav class="nav-links">
+            <a href="#">Home</a>
+            <div class="nav">
+                <a href="#">About <i class="ri-arrow-down-s-line"></i></a>
+                <a href="#">Pages <i class="ri-arrow-down-s-line"></i></a>
+                <a href="#">Blog <i class="ri-arrow-down-s-line"></i></a>
+            </div>
+            <a href="#">My Projects</a>
+        </nav>
+        
+        
+        <div class="profile-icon">
+            <i class="ri-account-circle-line"></i>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="back">
+            <i class="ri-arrow-left-line"></i>
+        </div>
+
+        <div>
+            <h1>Input <span> <br>
+                User Story</br></span></h1>
+        </div>
+        
+        <form class="user-story-form">
+            <div class="form-group">
+                <label for="who">Who:</label>
+                <input type="text" id="who" placeholder="">
+                <span class="edit-icon"><i class="ri-pencil-fill"></i></span>
+            </div>
+            
+            <div class="form-group">
+                <label for="what">What:</label>
+                <input type="text" id="what" placeholder="">
+                <span class="edit-icon"><i class="ri-pencil-fill"></i></span>
+            </div>
+            
+            <div class="form-group">
+                <label for="why">Why:</label>
+                <input type="text" id="why" placeholder="">
+                <span class="edit-icon"><i class="ri-pencil-fill"></i></span>
+            </div>
+            
+            <button type="submit" class="save-button">Save</button>
+        </form>
+    </div>
+</body>
+</html>
