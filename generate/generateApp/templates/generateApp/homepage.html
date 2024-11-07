@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generate - Project Dashboard</title>
+    <link rel="stylesheet" href="{% static homepage.css %}">
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="main-header">
+        <div class="logo">
+            <img src="images/logoo.png" alt="Generate Logo" class="logo-image"> 
+        </div>
+        
+        <nav class="nav-links">
+            <a href="#">Home</a>
+            <div class="nav">
+                <a href="#">About <i class="ri-arrow-down-s-line"></i></a>
+                <a href="#">Pages <i class="ri-arrow-down-s-line"></i></a>
+                <a href="#">Blog <i class="ri-arrow-down-s-line"></i></a>
+            </div>
+            <a href="#">My Projects</a>
+        </nav>
+        
+        <div class="profile-icon">
+            <img src="{% static images/acc.png %}" alt="Profile Icon" class="logo-image"> 
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Introduction Section -->
+        <section class="intro-section">
+            <h1>Generate it to <span class="highlight">your needs</span></h1>
+            <p>Seamlessly convert user stories into detailed use cases, sequence diagrams, and activity diagrams. Streamline your development process with automated, visual documentation that ensures your team stays aligned from planning to implementation.</p>
+            <button class="create-button">Create New Project</button>
+        </section>
+
+        <!-- Project Table Section -->
+        <section class="project-table-section">
+            <div class="search-container">
+                <input type="text" placeholder="Search Project" id="search-input">
+                <button id="search-button">Search</button>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>Project Name</th>
+                        <th>Date Created</th>
+                        <th>Last Updated</th>
+                        <th>GUI</th>
+                        <th>Action</th>
+                        <th>History</th>
+                    </tr>
+                </thead>
+                <tbody id="project-table-body">
+                    <!-- Example rows -->
+                    <tr>
+                        <td>1</td>
+                        <td>Example Project</td>
+                        <td>August 3, 2024 13:34 a.m</td>
+                        <td>September 1, 2024 06:30 p.m</td>
+                        <td><button class="edit-btn"><img src="{% static images/Layout.png %}" alt="Edit" style="width: 40px; height: 40px;"></button></td>
+                        <td><button class="edit-btn"><img src="{% static images/Edit.png %}" alt="Edit" style="width: 40px; height: 40px;"></button> <button class="delete-btn"><img src="images/Trash.png" alt="Trash" style="width: 40px; height: 40px;"></button></td>
+                        <td class="dropdown">
+                            <button class="history-btn">
+                                <img src="{% static images/Back.png %}" alt="Back" style="width: 40px; height: 40px;">
+                            </button>
+                            <div class="dropdown-content">
+                                <p>User Story <span class="done-icon">✓</span></p>
+                                <p>User Story Scenario <span class="done-icon">✓</span></p>
+                                <p>Activity Diagram</p>
+                                <p>Class Diagram</p>
+                                <p>GUI</p>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Example Project</td>
+                        <td>August 3, 2024 13:34 a.m</td>
+                        <td>September 1, 2024 06:30 p.m</td>
+                        <td><button class="edit-btn"><img src="{% static images/Layout.png %}" alt="Edit" style="width: 40px; height: 40px;"></button></td>
+                        <td><button class="edit-btn"><img src="{% static images/Edit.png %}" alt="Edit" style="width: 40px; height: 40px;"></button> <button class="delete-btn"><img src="images/Trash.png" alt="Trash" style="width: 40px; height: 40px;"></button></td>
+                        <td class="dropdown">
+                            <button class="history-btn">
+                                <img src="{% static images/Back.png %}" alt="Back" style="width: 40px; height: 40px;">
+                            </button>
+                            <div class="dropdown-content">
+                                <p>User Story <span class="done-icon">✓</span></p>
+                                <p>User Story Scenario <span class="done-icon">✓</span></p>
+                                <p>Sequence Diagram <span class="done-icon">✓</span></p>
+                                <p>Activity Diagram <span class="done-icon">✓</span></p>
+                                <p>Class Diagram</p>
+                                <p>GUI</p>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Example Project</td>
+                        <td>August 3, 2024 13:34 a.m</td>
+                        <td>September 1, 2024 06:30 p.m</td>
+                        <td><button class="edit-btn"><img src="{% static images/Layout.png %}" alt="Edit" style="width: 40px; height: 40px;"></button></td>
+                        <td><button class="edit-btn"><img src="{% static images/Edit.png %}" alt="Edit" style="width: 40px; height: 40px;"></button> <button class="delete-btn"><img src="images/Trash.png" alt="Trash" style="width: 40px; height: 40px;"></button></td>
+                        <td class="dropdown">
+                            <button class="history-btn">
+                                <img src="{% static images/Back.png %}" alt="Back" style="width: 40px; height: 40px;">
+                            </button>
+                            <div class="dropdown-content">
+                                <p>User Story <span class="done-icon">✓</span></p>
+                                <p>User Story Scenario <span class="done-icon">✓</span></p>
+                                <p>Sequence Diagram <span class="done-icon">✓</span></p>
+                                <p>Activity Diagram <span class="done-icon">✓</span></p>
+                                <p>Class Diagram</p>
+                                <p>GUI</p>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>                
+            </table>
+            
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

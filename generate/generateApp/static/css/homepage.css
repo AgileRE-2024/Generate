@@ -1,0 +1,227 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f9f9f9;
+    padding-top: 80px; /* Add padding to avoid overlap with fixed header */
+}
+
+.main-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 20px;
+    background-color: #ffffff;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo-image {
+    width: 100px;
+    height: auto;
+    margin-right: 10px;
+}
+
+.logo span {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #d18f5c;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+}
+
+.nav-links a {
+    margin: 0 15px;
+    font-size: 1rem;
+    color: #333;
+    text-decoration: none;
+    position: relative;
+    display: inline-flex; 
+    align-items: center; 
+}
+
+.nav-links i {
+    margin-left: 5px;           
+    font-size: 0.8em;           
+}
+
+.nav {
+    display: inline-flex;       
+}
+
+.nav-links a:hover {
+    color: #F1BD7F;
+}
+
+.profile-icon {
+    width: 80px;
+    height: 80px; 
+    transform: scale(0.5);
+}
+
+.intro-section {
+    text-align: center;
+    padding: 120px 20px 60px; /* Add more padding at the top */
+    background-color: #fff8e1; /* Light background for emphasis */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+}
+
+.intro-section h1 {
+    font-size: 48px; /* Increase font size */
+    font-weight: bold;
+    color: #333;
+}
+
+.highlight {
+    background-image: url('images/elemen.png');
+    padding: 0 5px;
+    border-radius: 5px;
+}
+
+.intro-section p {
+    max-width: 700px; /* Make paragraph width a bit wider */
+    margin: 20px auto;
+    font-size: 18px; /* Slightly larger font for better readability */
+    color: #555;
+    line-height: 1.6;
+}
+
+.create-button {
+    padding: 12px 24px;
+    font-size: 18px;
+    color: #ffffff;
+    background-color: #F8B400;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 25px;
+    transition: background-color 0.3s;
+}
+
+.create-button:hover {
+    background-color: #e8a400; /* Slightly darker shade on hover */
+}
+
+.project-table-section {
+    padding: 40px;
+}
+
+.search-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.search-container input {
+    padding: 10px;
+    font-size: 16px;
+    width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 5px 0 0 5px;
+}
+
+.search-container button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #F8B400;
+    color: #ffffff;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+thead {
+    background-color: #f3f3f3;
+}
+
+th, td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.edit-btn, .delete-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.edit-btn {
+    color: #4CAF50;
+}
+
+.delete-btn {
+    color: #F44336;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.history-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+/* Tambahkan ke dalam file CSS (homepage.css) */
+.dropdown {
+    position: relative; /* Pastikan dropdown ini relatif */
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%; /* Dropdown muncul di bawah tombol */
+    left: -50px; /* Pindahkan ke kiri dengan nilai yang sesuai */
+    background-color: #fff;
+    min-width: 200px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    text-align: left;
+    margin-top: 5px; /* Beri jarak sedikit antara tombol dan dropdown */
+    padding: 10px; /* Jarak keseluruhan konten */
+}
+
+
+.dropdown-content p {
+    padding: 15px 10px; /* Jarak dalam setiap item dropdown */
+    margin: 0;
+    font-size: 16px;
+    color: #333;
+    border-bottom: 1px solid #e2e2e2; /* Garis pemisah antar item */
+}
+
+.dropdown-content p:last-child {
+    border-bottom: none; /* Hilangkan garis pemisah di item terakhir */
+}
+
+
+.dropdown-content a:hover {
+    background-color: #f2f2f2;
+}
