@@ -5,14 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Generate - Project Dashboard</title>
-    <link rel="stylesheet" href="{% static homepage.css %}">
+    <link rel="stylesheet" href="{% static 'css/homepage.css' %}">
 </head>
 <body>
 
     <!-- Header -->
     <header class="main-header">
         <div class="logo">
-            <img src="images/logoo.png" alt="Generate Logo" class="logo-image"> 
+            <img src="{% static 'images/logoo.png' %}" alt="Generate Logo" class="logo-image"> 
         </div>
         
         <nav class="nav-links">
@@ -26,7 +26,7 @@
         </nav>
         
         <div class="profile-icon">
-            <img src="{% static images/acc.png %}" alt="Profile Icon" class="logo-image"> 
+            <img src="{% static 'images/account_circle.jpg' %}" alt="Profile Icon" class="logo-image"> 
         </div>
     </header>
 
@@ -64,11 +64,11 @@
                         <td>Example Project</td>
                         <td>August 3, 2024 13:34 a.m</td>
                         <td>September 1, 2024 06:30 p.m</td>
-                        <td><button class="edit-btn"><img src="{% static images/Layout.png %}" alt="Edit" style="width: 40px; height: 40px;"></button></td>
-                        <td><button class="edit-btn"><img src="{% static images/Edit.png %}" alt="Edit" style="width: 40px; height: 40px;"></button> <button class="delete-btn"><img src="images/Trash.png" alt="Trash" style="width: 40px; height: 40px;"></button></td>
+                        <td><button class="edit-btn"><img src="{% static 'images/Layout.png' %}" alt="Edit" style="width: 40px; height: 40px;"></button></td>
+                        <td><button class="edit-btn"><img src="{% static 'images/Edit.png' %}" alt="Edit" style="width: 40px; height: 40px;"></button> <button class="delete-btn"><img src="images/Trash.png" alt="Trash" style="width: 40px; height: 40px;"></button></td>
                         <td class="dropdown">
                             <button class="history-btn">
-                                <img src="{% static images/Back.png %}" alt="Back" style="width: 40px; height: 40px;">
+                                <img src="{% static 'images/Back.png' %}" alt="Back" style="width: 40px; height: 40px;">
                             </button>
                             <div class="dropdown-content">
                                 <p>User Story <span class="done-icon">✓</span></p>
@@ -84,11 +84,11 @@
                         <td>Example Project</td>
                         <td>August 3, 2024 13:34 a.m</td>
                         <td>September 1, 2024 06:30 p.m</td>
-                        <td><button class="edit-btn"><img src="{% static images/Layout.png %}" alt="Edit" style="width: 40px; height: 40px;"></button></td>
-                        <td><button class="edit-btn"><img src="{% static images/Edit.png %}" alt="Edit" style="width: 40px; height: 40px;"></button> <button class="delete-btn"><img src="images/Trash.png" alt="Trash" style="width: 40px; height: 40px;"></button></td>
+                        <td><button class="edit-btn"><img src="{% static 'images/Layout.png' %}" alt="Edit" style="width: 40px; height: 40px;"></button></td>
+                        <td><button class="edit-btn"><img src="{% static 'images/Edit.png' %}" alt="Edit" style="width: 40px; height: 40px;"></button> <button class="delete-btn"><img src="images/Trash.png" alt="Trash" style="width: 40px; height: 40px;"></button></td>
                         <td class="dropdown">
                             <button class="history-btn">
-                                <img src="{% static images/Back.png %}" alt="Back" style="width: 40px; height: 40px;">
+                                <img src="{% static 'images/Back.png' %}" alt="Back" style="width: 40px; height: 40px;">
                             </button>
                             <div class="dropdown-content">
                                 <p>User Story <span class="done-icon">✓</span></p>
@@ -105,11 +105,11 @@
                         <td>Example Project</td>
                         <td>August 3, 2024 13:34 a.m</td>
                         <td>September 1, 2024 06:30 p.m</td>
-                        <td><button class="edit-btn"><img src="{% static images/Layout.png %}" alt="Edit" style="width: 40px; height: 40px;"></button></td>
-                        <td><button class="edit-btn"><img src="{% static images/Edit.png %}" alt="Edit" style="width: 40px; height: 40px;"></button> <button class="delete-btn"><img src="images/Trash.png" alt="Trash" style="width: 40px; height: 40px;"></button></td>
+                        <td><button class="edit-btn"><img src="{% static 'images/Layout.png' %}" alt="Edit" style="width: 40px; height: 40px;"></button></td>
+                        <td><button class="edit-btn"><img src="{% static 'images/Edit.png' %}" alt="Edit" style="width: 40px; height: 40px;"></button> <button class="delete-btn"><img src="images/Trash.png" alt="Trash" style="width: 40px; height: 40px;"></button></td>
                         <td class="dropdown">
                             <button class="history-btn">
-                                <img src="{% static images/Back.png %}" alt="Back" style="width: 40px; height: 40px;">
+                                <img src="{% static 'images/Back.png' %}" alt="Back" style="width: 40px; height: 40px;">
                             </button>
                             <div class="dropdown-content">
                                 <p>User Story <span class="done-icon">✓</span></p>

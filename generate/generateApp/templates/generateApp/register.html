@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+    {% load static %}
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,9 +11,10 @@
 <body>
     <div class="container">
         <div class="left-side">
+            
             <div class="navbar">
                 <div class="logo">
-                    <img src="{% static 'images/logoo.png' %}" alt="Logo">
+                    <img src="{% static 'images/logo.png' %}" alt="Logo">
                 </div>
             </div>
             <!--<div class="quote">
@@ -42,7 +44,7 @@
 
                     <button type="submit">Register Account</button>
                 </form>
-                <p class="login-link">Already have an account? <a href="#">Login</a></p>
+                <p class="login-link">Already have an account? <a href="{% static '/login.html' %}">Login</a></p>
             </div>
             </div>
         </div>

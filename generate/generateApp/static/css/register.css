@@ -36,6 +36,20 @@ body {
     height: 100vh; /* Full height of the viewport */
 }
 
+.bg{
+    background-color: rgba(245, 136, 41, 0.9); /* Orange color with higher opacity */
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: multiply;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: white;
+    position: relative;
+    height: 100vh;
+}
+
 .left-side::after {
     content: '';
     position: absolute;
