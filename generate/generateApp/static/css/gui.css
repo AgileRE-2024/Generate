@@ -6,8 +6,8 @@
 }
 
 body {
-    background-color: #f9f9f9;
-    padding-top: 80px; /* Add padding to avoid overlap with fixed header */
+    background-color: #e3a661;
+    padding-top: 80px;
 }
 
 .main-header {
@@ -35,12 +35,6 @@ body {
     margin-right: 10px;
 }
 
-.logo span {
-    font-size: 1.2rem;
-    font-weight: bold;
-    color: #d18f5c;
-}
-
 .nav-links {
     display: flex;
     align-items: center;
@@ -51,18 +45,8 @@ body {
     font-size: 1rem;
     color: #333;
     text-decoration: none;
-    position: relative;
     display: inline-flex; 
     align-items: center; 
-}
-
-.nav-links i {
-    margin-left: 5px;           
-    font-size: 0.8em;           
-}
-
-.nav {
-    display: inline-flex;       
 }
 
 .nav-links a:hover {
@@ -97,118 +81,83 @@ h1 span {
     font-weight: bold;
 }
 
-/* Input Group */
-.input-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
+.form-section {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    width: 400px;
+    text-align: center;
 }
 
-.input-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
-}
-
-.input-group {
+.page-dropdown {
     display: flex;
     align-items: center;
-    width: 300px;
+    justify-content: space-between;
+    margin-bottom: 20px;
 }
 
-#page-input {
+#page-dropdown {
     padding: 10px;
     border-radius: 8px;
     border: 1px solid #ccc;
-    width: 100%;
-    font-size: 1em;
+    width: 80%;
 }
 
 .add-page {
     background: none;
     border: none;
     cursor: pointer;
-    padding: 0;
-    margin-left: 8px;
 }
 
-.add-icon {
-    width: 20px;
-    height: 20px;
+.attribute-section {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;  /* Mengatur agar elemen di dalamnya muncul secara vertikal */
 }
 
-
-.add-page {
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 0;
-    margin-left: 8px;
-}
-
-.add-icon {
-    width: 20px;
-    height: 20px;
-}
-
-/* Attribute Dropdown */
-.attribute-dropdown {
-    position: relative;
-    width: 300px;
+.attribute-group {
     display: flex;
     align-items: center;
-    gap: 8px;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
 }
 
-#attribute-input {
-    padding: 10px;
-    border-radius: 8px;
-    border: 1px solid #ccc;
-    width: 240px;
-    font-size: 1em;
-}
-
-.add-button, .delete-button, .add-page {
-    background: none;
-    width: 20px;
-    height: 20px;
-    padding: 0;
-    border: none;
-    cursor: pointer;
-}
-
-.add-button img, .delete-button img, .add-page img {
-    width: 100%;
-    height: 100%;
-}
-
-/* Additional Attributes */
 .attribute-input {
-    width: 100%;
-    padding: 8px;
-    border-radius: 6px;
-    border: 1px solid #ccc;
-}
-
-.dropdown-content {
-    position: absolute;
-    top: 110%; /* Adjusts the dropdown to appear below the main input */
-    left: 50%; /* Centers the dropdown */
-    transform: translateX(-50%); /* Ensures perfect horizontal centering */
-    display: flex;
-    flex-direction: column;
     padding: 10px;
-    background-color: #ffffff;
-    border: 1px solid #ccc;
     border-radius: 8px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
-    width: 280px; /* Slightly narrower than the main input for visual alignment */
-    z-index: 999;
+    border: 1px solid #ccc;
+    width: 80%;
 }
 
-.attribute-dropdown:hover .dropdown-content {
-    display: flex;
+.add-attribute {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px 10px;
+}
+
+.add-icon {
+    width: 20px;  /* Sesuaikan ukuran sesuai kebutuhan */
+    height: 20px; /* Sesuaikan ukuran sesuai kebutuhan */
+}
+
+.delete-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px 10px;
+}
+
+.delete-icon {
+    width: 16px;  /* Sesuaikan ukuran sesuai kebutuhan */
+    height: 16px; /* Sesuaikan ukuran sesuai kebutuhan */
+}
+
+.save-button {
+    background-color: #c97543;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
 }

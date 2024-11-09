@@ -26,3 +26,7 @@ def resultUS(request):
 def homepage(request):
     context = {}
     return render(request, "generateApp/homepage.html", context)
+
+def gui(request):
+    context = {}
+    return render(request, "generateApp/gui.html", context)

@@ -1,16 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+    {% load static %}
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Generate - Input GUI</title>
-  <link rel="stylesheet" href="gui.css">
+  <link rel="stylesheet" href="{% static 'css/gui.css' %}">
 </head>
 <body>
     <!-- Header -->
     <header class="main-header">
         <div class="logo">
-            <img src="images/logoo.png" alt="Generate Logo" class="logo-image"> 
+            <img src="{% static 'images/logoo.png' %}" alt="Generate Logo" class="logo-image"> 
         </div>
         
         <nav class="nav-links">
@@ -24,33 +25,38 @@
         </nav>
         
         <div class="profile-icon">
-            <img src="images/acc.png" alt="Profile Icon" class="logo-image"> 
+            <img src="{% static 'images/acc.png' %}" alt="Profile Icon" class="logo-image"> 
         </div>
     </header>
 
     <main>
-      <h1>Input <span>GUI</span></h1>
-      <div class="input-container">
-        <div class="input-group">
-            <input type="text" placeholder="Type Page.." id="page-input">
-            <button onclick="addAttribute()" class="add-page">
-                <img src="images/Add.png" alt="Add" class="add-icon">
+        <h1>Input <span>GUI</span></h1>
+        <div class="form-section">
+          <div class="page-dropdown">
+            <select id="page-dropdown">
+              <option value="Type Page">Type Page</option>
+            </select>
+            <button onclick="addPage()" class="add-page">
+              <img src="{% static 'images/Add.png' %}" alt="Add Page" class="add-icon">
             </button>
+          </div>
+          
+          <div class="attribute-section" id="attribute-section">
+            <div class="attribute-group">
+              <input type="text" placeholder="Type Attribute" class="attribute-input">
+              <button onclick="addAttribute()" class="add-attribute">
+                <img src="{% static 'images/Add.png' %}" alt="Add Attribute" class="add-icon">
+              </button>
+              <button onclick="removeAttribute()" class="delete-button">
+                <img src="{% static 'images/Trash.png' %}" alt="Delete" class="delete-icon">
+              </button>
+            </div>
+          </div>
+          
+          <button class="save-button">Save</button>
         </div>
-    </div>
-    
-<!-- Dropdown for Type Attributes -->
-<div class="attribute-dropdown">
-    <input type="text" placeholder="Type Attributes.." id="attribute-input-0">
-    <button onclick="addAttribute()" class="add-button">
-        <img src="images/Plus.png" alt="Add" class="add-icon">
-    </button>
-    <button class="delete-button" onclick="removeAttribute(this)">
-        <img src="images/Trash.png" alt="Delete" class="delete-icon">
-    </button>
-  </div>
-    </main>
+      </main>
 
-    <script src="script.js"></script>
+    <script src="{% static 'js/script.js' %}"></script>
 </body>
 </html>
