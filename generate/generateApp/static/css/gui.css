@@ -6,7 +6,7 @@
 }
 
 body {
-    background-color: #e3a661;
+    background-color: #F1DEC6;
     padding-top: 80px;
 }
 
@@ -97,6 +97,13 @@ h1 span {
     margin-bottom: 20px;
 }
 
+.page-dropdown-select, #page-dropdown {
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    width: 80%;
+}
+
 #page-dropdown {
     padding: 10px;
     border-radius: 8px;
@@ -153,11 +160,18 @@ h1 span {
     height: 16px; /* Sesuaikan ukuran sesuai kebutuhan */
 }
 
+.form-entry {
+    margin-bottom: 20px;
+}
+
 .save-button {
+    margin-top: 20px;
     background-color: #c97543;
     color: #fff;
     padding: 10px 20px;
     border: none;
     border-radius: 8px;
     cursor: pointer;
+    align-self: center;
 }
+

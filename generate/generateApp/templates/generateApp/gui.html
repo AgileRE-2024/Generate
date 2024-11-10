@@ -25,16 +25,19 @@
         </nav>
         
         <div class="profile-icon">
-            <img src="{% static 'images/acc.png' %}" alt="Profile Icon" class="logo-image"> 
+            <img src="{% static 'images/account_circle.jpg' %}" alt="Profile Icon" class="logo-image"> 
         </div>
     </header>
 
     <main>
-        <h1>Input <span>GUI</span></h1>
-        <div class="form-section">
+        <h1>Input <span><br>
+          GUI</br></span></h1>
+
+        <div class="form-section" id="form-section">
           <div class="page-dropdown">
             <select id="page-dropdown">
               <option value="Type Page">Type Page</option>
+              <option value="Registration">Registration</option>
             </select>
             <button onclick="addPage()" class="add-page">
               <img src="{% static 'images/Add.png' %}" alt="Add Page" class="add-icon">
@@ -44,16 +47,16 @@
           <div class="attribute-section" id="attribute-section">
             <div class="attribute-group">
               <input type="text" placeholder="Type Attribute" class="attribute-input">
-              <button onclick="addAttribute()" class="add-attribute">
+              <button onclick="addAttribute(event)" class="add-attribute">
                 <img src="{% static 'images/Add.png' %}" alt="Add Attribute" class="add-icon">
               </button>
-              <button onclick="removeAttribute()" class="delete-button">
+              <button onclick="removeAttribute(this)" class="delete-button">
                 <img src="{% static 'images/Trash.png' %}" alt="Delete" class="delete-icon">
               </button>
             </div>
           </div>
           
-          <button class="save-button">Save</button>
+          <button onclick="saveForm()" class="save-button">Save</button>
         </div>
       </main>
 
