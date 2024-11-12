@@ -1,0 +1,234 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #fbe5d6;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+h1 {
+  color: #000;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.activity-container {
+  width: 100%;
+  max-width: 600px;
+}
+
+.activity-item {
+  background-color: #ffc8a2;
+  padding: 15px;
+  margin: 10px 0;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  position: relative;
+}
+
+.activity-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.activity-text {
+  flex-grow: 1;
+}
+
+.button-group {
+  display: flex;
+  gap: 10px;
+}
+
+.edit-btn, .delete-btn, .arrow-btn {
+  border: none;
+  background: none;
+  cursor: pointer;
+  padding: 5px;
+  font-size: 16px;
+}
+
+.edit-btn {
+  color: #4CAF50;
+}
+
+.delete-btn {
+  color: #f44336;
+}
+
+.arrow-btn {
+  color: #666;
+}
+
+.entity-dropdown {
+  display: none;
+  background: white;
+  padding: 15px;
+  border-radius: 5px;
+  margin-top: 10px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.entity-dropdown.show {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+/* Update pick button styles */
+.pick-btn {
+  background-color: #e67e22;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+/* Add styles for the input field if needed */
+.entity-input {
+  flex-grow: 1;
+  border: none;
+  outline: none;
+  padding: 5px;
+}
+
+.save-btn, .generate-btn {
+  background-color: #e67e22;
+  color: white;
+  border: none;
+  padding: 10px 30px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+  font-size: 16px;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal.show {
+  display: flex;
+}
+
+.modal-content {
+  background-color: #e67e22;
+  padding: 20px;
+  border-radius: 10px;
+  width: 400px;
+}
+
+.modal-header {
+  color: white;
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 18px;
+}
+
+.entity-choices {
+  display: flex;
+  justify-content: space-around;
+  gap: 20px;
+}
+
+.entity-choice {
+  background: white;
+  padding: 20px 40px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.entity-choice:hover {
+  background: #f0f0f0;
+}
+
+.add-btn {
+  position: absolute;
+  right: -40px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #e67e22;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.add-btn:hover {
+  background-color: #d35400;
+}
+
+.result-page {
+  display: none;
+  width: 100%;
+  min-height: 100vh;
+  background-color: #fbe5d6;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  padding: 20px;
+}
+
+.result-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.result-text {
+  color: #e67e22;
+  font-size: 24px;
+}
+
+.diagram-container {
+  max-width: 800px;
+  margin: 0 auto;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.diagram-container img {
+  width: 100%;
+  height: auto;
+}
+
+.back-to-list {
+  display: block;
+  margin: 40px auto;
+  background-color: #e67e22;
+  color: white;
+  border: none;
+  padding: 15px 40px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+.back-to-list:hover {
+  background-color: #d35400;
+}

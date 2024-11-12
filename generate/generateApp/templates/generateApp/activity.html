@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Activity Diagram</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Activity Diagram</h1>
+    
+    <div id="activity-container" class="activity-container">
+        <div class="activity-item">
+            <div class="activity-header">
+                <div class="activity-text">Action 1: Student is on the main page of the attendance system</div>
+                <div class="button-group">
+                    <button class="edit-btn">✏️</button>
+                    <button class="delete-btn">🗑️</button>
+                    <button class="arrow-btn">↓</button>
+                </div>
+            </div>
+            <div class="entity-dropdown">
+                <div>Entity/Role:</div>
+                <button class="pick-btn">Pick</button>
+            </div>
+            <button class="add-btn">+</button>
+        </div>
+
+        <div class="activity-item">
+            <div class="activity-header">
+                <div class="activity-text">Action2: Student selects the "Attendance History" menu</div>
+                <div class="button-group">
+                    <button class="edit-btn">✏️</button>
+                    <button class="delete-btn">🗑️</button>
+                    <button class="arrow-btn">↓</button>
+                </div>
+            </div>
+            <div class="entity-dropdown">
+                <div>Entity/Role:</div>
+                <button class="pick-btn">Pick</button>
+            </div>
+            <button class="add-btn">+</button>
+        </div>
+
+        <div class="activity-item">
+            <div class="activity-header">
+                <div class="activity-text">Action3: System displays form to enter search parameters</div>
+                <div class="button-group">
+                    <button class="edit-btn">✏️</button>
+                    <button class="delete-btn">🗑️</button>
+                    <button class="arrow-btn">↓</button>
+                </div>
+            </div>
+            <div class="entity-dropdown">
+                <div>Entity/Role:</div>
+                <button class="pick-btn">Pick</button>
+            </div>
+            <button class="add-btn">+</button>
+        </div>
+
+        <div class="activity-item">
+            <div class="activity-header">
+                <div class="activity-text">Action4: Student enters search parameters</div>
+                <div class="button-group">
+                    <button class="edit-btn">✏️</button>
+                    <button class="delete-btn">🗑️</button>
+                    <button class="arrow-btn">↓</button>
+                </div>
+            </div>
+            <div class="entity-dropdown">
+                <div>Entity/Role:</div>
+                <button class="pick-btn">Pick</button>
+            </div>
+            <button class="add-btn">+</button>
+        </div>
+    </div>
+
+    <button class="save-btn">Save</button>
+    <button class="generate-btn">Generate to Activity</button>
+
+    <div class="modal">
+        <div class="modal-content">
+            <div class="modal-header">Pick One for Entity/Role</div>
+            <div class="entity-choices">
+                <div class="entity-choice">Student</div>
+                <div class="entity-choice">System</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add this new div for the result page -->
+    <div id="result-page" class="result-page">
+        <div class="back-arrow">←</div>
+        <div class="result-header">
+            <h1><span class="result-text">Result</span><br>Activity Diagram</h1>
+        </div>
+        <div class="diagram-container">
+            <img id="activity-diagram-result" src="" alt="Activity Diagram">
+        </div>
+        <button class="back-to-list" onclick="window.location.href='activity.html'">Go to Project List</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

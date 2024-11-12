@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sequence Diagram</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="back-arrow">
+            ←
+        </div>
+
+        <h1>Sequence Diagram</h1>
+
+        <div class="activities-container">
+            <div class="activity-item">
+                <div class="activity-content">
+                    <span>Activity1: Selecting "Attendance History"</span>
+                    <div class="action-buttons">
+                        <button class="edit-btn">✏️</button>
+                        <button class="delete-btn">🗑️</button>
+                        <button class="expand-btn">↓</button>
+                    </div>
+                </div>
+                <div class="dropdown-content hidden">
+                    <div class="form-group">
+                        Actor: Student
+                    </div>
+                    <div class="form-group">
+                        Activity: Display Form for Entering Search Parameters
+                    </div>
+                    <div class="form-group">
+                        Lifeline: 
+                        <button class="pick-button">Pick</button>
+                    </div>
+                </div>
+                <button class="add-btn">+</button>
+            </div>
+
+            <div class="activity-item">
+                <div class="activity-content">
+                    <span>Activity2: Entering Search Parameters and Viewing Attendance History</span>
+                    <div class="action-buttons">
+                        <button class="edit-btn">✏️</button>
+                        <button class="delete-btn">🗑️</button>
+                        <button class="expand-btn">↓</button>
+                    </div>
+                </div>
+                <div class="dropdown-content hidden">
+                    <div class="form-group">
+                        Actor: Student
+                    </div>
+                    <div class="form-group">
+                        Activity: Display Form for Entering Search Parameters
+                    </div>
+                    <div class="form-group">
+                        Lifeline: 
+                        <button class="pick-button">Pick</button>
+                    </div>
+                </div>
+                <button class="add-btn">+</button>
+            </div>
+
+            <div class="activity-item">
+                <div class="activity-content">
+                    <span>Activity3: Entering the...</span>
+                    <div class="action-buttons">
+                        <button class="edit-btn">✏️</button>
+                        <button class="delete-btn">🗑️</button>
+                        <button class="expand-btn">↓</button>
+                    </div>
+                </div>
+                <div class="dropdown-content hidden">
+                    <div class="form-group">
+                        Actor: Student
+                    </div>
+                    <div class="form-group">
+                        Activity: Display Form for Entering Search Parameters
+                    </div>
+                    <div class="form-group">
+                        Lifeline: 
+                        <button class="pick-button">Pick</button>
+                    </div>
+                </div>
+                <button class="add-btn">+</button>
+            </div>
+        </div>
+
+        <div class="button-container">
+            <button class="save-btn">Save</button>
+            <button class="generate-btn">Generate to Sequence</button>
+        </div>
+
+        <!-- Feature Picker Modal -->
+        <div class="modal hidden" id="featurePickerModal">
+            <div class="modal-content">
+                <h2>Pick One for Feature</h2>
+                <div class="feature-options">
+                    <div class="feature-option" data-feature="Actor">
+                        <div class="feature-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50">
+                                <path stroke="#e74c3c" stroke-width="2" fill="none" d="M25 10 L25 30 M15 20 L35 20 M25 30 L15 45 M25 30 L35 45 M25 5 A5 5 0 1 0 25 15 A5 5 0 1 0 25 5"/>
+                            </svg>
+                        </div>
+                        <span>Actor</span>
+                    </div>
+                    <div class="feature-option" data-feature="Boundary">
+                        <div class="feature-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50">
+                                <circle cx="25" cy="25" r="20" stroke="#3498db" stroke-width="2" fill="#f1c40f" fill-opacity="0.3"/>
+                                <line x1="5" y1="25" x2="45" y2="25" stroke="#3498db" stroke-width="2"/>
+                            </svg>
+                        </div>
+                        <span>Boundary</span>
+                    </div>
+                    <div class="feature-option" data-feature="Controller">
+                        <div class="feature-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50">
+                                <circle cx="25" cy="25" r="20" stroke="#2ecc71" stroke-width="2" fill="#f1c40f" fill-opacity="0.3"/>
+                            </svg>
+                        </div>
+                        <span>Controller</span>
+                    </div>
+                    <div class="feature-option" data-feature="Entity">
+                        <div class="feature-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50">
+                                <circle cx="25" cy="25" r="20" stroke="#9b59b6" stroke-width="2" fill="#f1c40f" fill-opacity="0.3"/>
+                                <line x1="25" y1="5" x2="25" y2="45" stroke="#9b59b6" stroke-width="2"/>
+                            </svg>
+                        </div>
+                        <span>Entity</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="result-page" class="result-page hidden">
+        <div class="back-arrow">←</div>
+        <div class="result-header">
+            <h1><span class="result-text">Result</span><br>Sequence Diagram</h1>
+        </div>
+        <div class="diagram-container">
+            <img id="sequence-diagram-result" src="/api/placeholder/700/400" alt="Sequence Diagram">
+        </div>
+        <div class="button-container">
+            <button class="go-to-list">Go to Project List</button>
+            <button class="generate-class">Generate to Class</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
