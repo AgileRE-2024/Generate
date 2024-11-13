@@ -30,3 +30,11 @@ def homepage(request):
 def gui(request):
     context = {}
     return render(request, "generateApp/gui.html", context)
+
+def inputUSS(request):
+    context = {}
+    return render(request, "generateApp/inputUSS.html", context)
+
+def resultUSS(request):
+    context = {}
+    return render(request, "generateApp/resultUSS.html", context)

@@ -9,4 +9,6 @@ urlpatterns = [
     path('resultUS/', views.resultUS, name="resultUS"),
     path('homepage/', views.homepage, name="homepage"),
     path('gui/', views.gui, name="gui"),
+    path('inputUSS/', views.inputUSS, name="inputUSS"),
+    path('resultUSS/', views.resultUSS, name="resultUSS"),
 ]
