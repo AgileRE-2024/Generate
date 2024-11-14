@@ -17,7 +17,8 @@
     <div class="right-section">
         <div class="login-form">
             <h2>Login</h2>
-            <form action="#" method="POST">
+            <form action="{% url 'homepage' %}" method="POST">
+                {% csrf_token %}
                 <input type="email" name="email" placeholder="Email Address" required>
 
                 <div class="password-container">

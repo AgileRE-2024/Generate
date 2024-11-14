@@ -11,12 +11,9 @@
 <body>
     <div class="container">
         <div class="left-side">
-            
-            <div class="navbar">
                 <div class="logo">
                     <img src="{% static 'images/logo.png' %}" alt="Logo">
                 </div>
-            </div>
             <!--<div class="quote">
                 <p class="quote-text">"User story mapping is a facilitated, curated conversation that brings everyone along for the journey."</p>
                 <p class="quote-author">Nick Muldoon, Co-CEO Easy Agile</p>
@@ -24,7 +21,7 @@
         </div>
         <div class="right-side">
             <div class="form-container">
-                <a href="{% url 'login' %}" class="back-link">Back</a>
+                <a href="{% url 'home' %}" class="back-link">Back</a>
                 <h1>Register Individual Account!</h1>
                 <form>
                     <label for="name">Your name*</label>

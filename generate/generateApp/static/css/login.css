@@ -12,7 +12,8 @@ body {
     flex-direction: column;
     align-items: center;
     position: relative;
-    background-image: url("{% static 'images/bg.png' %}");
+    background-image: url('backg1.jpeg');
+    background-color: #FF8C00;
     background-size: cover; /* Menutupi seluruh area */
     background-position: center;
     background-repeat: no-repeat;
