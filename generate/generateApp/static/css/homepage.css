@@ -189,39 +189,55 @@ th, td {
 
 /* Tambahkan ke dalam file CSS (homepage.css) */
 .dropdown {
-    position: relative; /* Pastikan dropdown ini relatif */
+    position: relative;
 }
 
 .dropdown-content {
     display: none;
     position: absolute;
-    top: 100%; /* Dropdown muncul di bawah tombol */
-    left: -50px; /* Pindahkan ke kiri dengan nilai yang sesuai */
-    background-color: #fff;
-    min-width: 200px;
+    top: 100%;
+    left: 0; /* Sesuaikan posisi jika perlu */
+    background-color: #ffffff;
+    min-width: 220px;
     border: 1px solid #ddd;
     border-radius: 8px;
     box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
     z-index: 1;
-    text-align: left;
-    margin-top: 5px; /* Beri jarak sedikit antara tombol dan dropdown */
-    padding: 10px; /* Jarak keseluruhan konten */
+    padding: 8px 0; /* Tambahkan padding vertikal agar lebih rapih */
+    overflow: hidden; /* Tambahkan overflow untuk menjaga border-radius */
 }
 
-
-.dropdown-content p {
-    padding: 15px 10px; /* Jarak dalam setiap item dropdown */
-    margin: 0;
-    font-size: 16px;
+/* Gaya untuk setiap item dropdown */
+.dropdown-content a {
+    padding: 12px 16px;
+    display: block;
+    font-size: 15px;
     color: #333;
-    border-bottom: 1px solid #e2e2e2; /* Garis pemisah antar item */
+    text-decoration: none;
+    transition: background-color 0.2s ease, color 0.2s ease;
 }
-
-.dropdown-content p:last-child {
-    border-bottom: none; /* Hilangkan garis pemisah di item terakhir */
-}
-
 
 .dropdown-content a:hover {
-    background-color: #f2f2f2;
+    background-color: #f2f2f2; /* Warna latar belakang saat di-hover */
+    color: #0073e6; /* Warna teks saat di-hover, bisa disesuaikan */
+    border-radius: 4px; /* Tambahkan border-radius pada item saat di-hover */
+}
+
+/* Menampilkan dropdown saat tombol difokuskan atau area dropdown diarahkan kursor */
+.dropdown:focus-within .dropdown-content,
+.dropdown:hover .dropdown-content {
+    display: block;
+    animation: dropdownFadeIn 0.3s ease-in-out;
+}
+
+/* Animasi fade-in untuk dropdown */
+@keyframes dropdownFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px); /* Muncul sedikit dari atas */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
