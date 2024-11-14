@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class Diagram Input</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="container">
+        <button class="back-button">←</button>
+        <h1><span class="subheading">Input</span> Class Diagram</h1>
+
+        <div class="class-list">
+            <!-- Item 1 -->
+            <div class="class-item">
+                <input type="text" value="Presensi" class="class-name" readonly>
+                <div class="icons">
+                    <button class="edit-icon">✏️</button>
+                    <button class="delete-icon">🗑️</button>
+                    <button class="dropdown-icon">▼</button>
+                </div>
+                <div class="dropdown-content">
+                    <ul class="attribute-list">
+                        <li>- Id: int <button class="edit-attribute">✏️</button></li>
+                        <li>- studentId: int <button class="edit-attribute">✏️</button></li>
+                        <li>- courseId: int <button class="edit-attribute">✏️</button></li>
+                        <li>- registrationDate: Date <button class="edit-attribute">✏️</button></li>
+                        <li>- status: String <button class="edit-attribute">✏️</button></li>
+                        <li>- notes: String <button class="edit-attribute">✏️</button></li>
+                    </ul>
+                    <hr>
+                    <ul class="method-list">
+                        <li>+ registerCourse(studentId: int, courseId: int): void <button class="edit-method">✏️</button></li>
+                        <li>+ getRegistrationDetails(studentId: int, courseId: int): Regist <button class="edit-method">✏️</button></li>
+                        <li>+ updateRegistrationStatus(registrationId: int, status: String): void <button class="edit-method">✏️</button></li>
+                        <li>+ addNotesToRegistration(registrationId: int, note: String): void <button class="edit-method">✏️</button></li>
+                        <li>+ cancelRegistration(registrationId: int): void <button class="edit-method">✏️</button></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="action-buttons">
+                <button class="pick-button">Pick</button>
+                <button class="method-button">+ Add Method</button>
+                <button class="add-class-button">+ Add Class</button> <!-- New Button -->
+            </div>
+        </div>
+        </div>
+
+        <button class="save-button">Save</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
