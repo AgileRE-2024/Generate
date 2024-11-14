@@ -11,5 +11,6 @@ urlpatterns = [
     path('gui/', views.gui, name="gui"),
     path('inputUSS/', views.inputUSS, name="inputUSS"),
     path('resultUSS/', views.resultUSS, name="resultUSS"),
+    path('activity/', views.activity, name="activity"),
     path('sequence/', views.sequence, name="sequence"),
 ]

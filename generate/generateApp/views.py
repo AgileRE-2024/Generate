@@ -39,6 +39,10 @@ def resultUSS(request):
     context = {}
     return render(request, "generateApp/resultUSS.html", context)
 
+def activity(request):
+    context = {}
+    return render(request, "generateApp/activity.html", context)
+
 def sequence(request):
     context = {}
     return render(request, "generateApp/sequence.html", context)

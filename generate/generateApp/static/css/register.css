@@ -1,4 +1,4 @@
-* {
+•⁠  ⁠{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -14,16 +14,10 @@ body {
     min-height: 100vh;
 }
 
-
-.logo img {
-    width: 60px; /* Ukuran logo */
-    height: auto;
-}
-
 .left-side {
     width: 40%;
     background-image: url('backg1.jpeg');
-    background-color: rgba(245, 136, 41, 0.9); /* Orange color with higher opacity */
+    background-color: #FF8C00; /* Orange color with higher opacity */
     background-size: cover;
     background-position: center;
     background-blend-mode: multiply;
@@ -36,40 +30,24 @@ body {
     height: 100vh; /* Full height of the viewport */
 }
 
-.bg{
-    background-color: rgba(245, 136, 41, 0.9); /* Orange color with higher opacity */
-    background-size: cover;
-    background-position: center;
-    background-blend-mode: multiply;
-    padding: 40px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    color: white;
-    position: relative;
-    height: 100vh;
-}
-
-.left-side::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(245, 136, 41, 0.8); /* Slightly opaque orange overlay */
-    z-index: 1; /* Ensures the overlay is above the background but behind content */
-}
 
 .left-side * {
     position: relative;
     z-index: 2; /* Ensures content like text stays on top of the overlay */
 }
 
-.left-side .logo img {
-    width: 100px;
+.logo {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 10px;
+    z-index: 1; /* Agar tetap di atas background */
 }
 
+.logo img {
+    width: 100px; /* Adjust the size as needed */
+    height: auto; /* Maintain aspect ratio */
+}
 .left-side .navbar{
     display: flex;
     justify-content: center; /* Agar logo tetap di tengah dalam elemen kiri */
