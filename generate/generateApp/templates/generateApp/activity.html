@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+    {% load static %}
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Activity Diagram</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="{% static 'css/activity.css' %}">
 </head>
 <body>
     <h1>Activity Diagram</h1>
@@ -100,6 +101,6 @@
         <button class="back-to-list" onclick="window.location.href='activity.html'">Go to Project List</button>
     </div>
 
-    <script src="script.js"></script>
+    <script src="{% static 'js/activity.js' %}"></script>
 </body>
 </html>

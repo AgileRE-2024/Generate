@@ -46,3 +46,7 @@ def activity(request):
 def sequence(request):
     context = {}
     return render(request, "generateApp/sequence.html", context)
+
+def classDiag(request):
+    context = {}
+    return render(request, "generateApp/classDiag.html", context)
