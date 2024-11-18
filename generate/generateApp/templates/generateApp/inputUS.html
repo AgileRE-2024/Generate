@@ -11,9 +11,8 @@
 <body>
     <header class="main-header">
         <div class="logo">
-            <img src="{% static 'images/logoo.png' %}" alt="Generate Logo" class="logo-image"> <!-- Ganti "logo.png" dengan URL logo Anda -->
+            <img src="{% static 'images/logoo.png' %}" alt="Generate Logo" class="logo-image">
         </div>
-        
         <nav class="nav-links">
             <a href="#">Home</a>
             <div class="nav">
@@ -23,8 +22,6 @@
             </div>
             <a href="#">My Projects</a>
         </nav>
-        
-        
         <div class="profile-icon">
             <i class="ri-account-circle-line"></i>
         </div>
@@ -34,33 +31,42 @@
         <div class="back">
             <i class="ri-arrow-left-line"></i>
         </div>
-
         <div>
-            <h1>Input <span> <br>
-                User Story</br></span></h1>
+            <h1>Input <span><br>User Story</br></span></h1>
         </div>
-        
-        <form class="user-story-form">
+
+        <form id="userStoryForm" class="user-story-form">
             <div class="form-group">
                 <label for="who">Who:</label>
-                <input type="text" id="who" placeholder="">
-                <span class="edit-icon"><i class="ri-pencil-fill"></i></span>
+                <input type="text" id="who" placeholder="Enter who">
             </div>
-            
             <div class="form-group">
                 <label for="what">What:</label>
-                <input type="text" id="what" placeholder="">
-                <span class="edit-icon"><i class="ri-pencil-fill"></i></span>
+                <input type="text" id="what" placeholder="Enter what">
             </div>
-            
             <div class="form-group">
                 <label for="why">Why:</label>
-                <input type="text" id="why" placeholder="">
-                <span class="edit-icon"><i class="ri-pencil-fill"></i></span>
+                <input type="text" id="why" placeholder="Enter why">
             </div>
-            
-            <button type="submit" class="save-button">Save</button>
+            <button type="button" class="save-button" id="saveBtn">Save</button>
         </form>
     </div>
+
+    <script>
+        // Save input values to localStorage and navigate to resultUS.html
+        document.getElementById("saveBtn").addEventListener("click", function () {
+            const who = document.getElementById("who").value;
+            const what = document.getElementById("what").value;
+            const why = document.getElementById("why").value;
+
+            // Save to localStorage
+            localStorage.setItem("who", who);
+            localStorage.setItem("what", what);
+            localStorage.setItem("why", why);
+
+            // Redirect to resultUS.html
+            window.location.href = "{% url 'resultUS' %}";
+        });
+    </script>
 </body>
 </html>

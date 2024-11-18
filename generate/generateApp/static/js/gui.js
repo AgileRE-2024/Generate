@@ -90,3 +90,11 @@ function createAttributeGroup() {
 
   return attributeGroup;
 }
+
+function saveForm() {
+  // Simpan data jika diperlukan (misalnya validasi/form handling)
+  console.log("Form data saved successfully!");
+  
+  // Arahkan ke halaman homepage setelah tombol "Save" ditekan
+  window.location.href = "/homepage"; // Pastikan URL ini sesuai dengan path di Django urls.py
+}

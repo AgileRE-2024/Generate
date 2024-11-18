@@ -13,4 +13,5 @@ urlpatterns = [
     path('resultUSS/', views.resultUSS, name="resultUSS"),
     path('activity/', views.activity, name="activity"),
     path('sequence/', views.sequence, name="sequence"),
+    path('classDiag/', views.classDiag, name="classDiag"),
 ]
