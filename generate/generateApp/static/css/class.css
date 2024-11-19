@@ -3,25 +3,24 @@
     padding: 0;
     box-sizing: border-box;
     font-family: Arial, sans-serif;
-}
-
-body {
-    background-color: #f1e2cf;
+  }
+  
+  body {
+    background-color: #f8e7d8;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-}
-
-.container {
-    width: 60%;
-    max-width: 700px;
-    text-align: center;
-    color: #333;
+    padding: 20px;
+  }
+  
+  .container {
+    width: 90%;
+    max-width: 1000px;
     position: relative;
-}
-
-.back-button {
+  }
+  
+  .back-button {
     background: none;
     border: none;
     font-size: 24px;
@@ -29,122 +28,333 @@ body {
     position: absolute;
     top: 20px;
     left: 20px;
-}
-
-h1 {
-    font-size: 36px;
-    font-weight: bold;
-    margin-bottom: 20px;
-}
-
-.subheading {
-    color: #f1a951;
+    color: #000;
+  }
+  
+  h1 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 32px;
+  }
+  
+  .input-text {
+    color: #e67e22;
+    display: block;
     font-weight: normal;
-}
-
-.class-list {
+    margin-bottom: 5px;
+  }
+  
+  .title-text {
+    color: #000;
+    display: block;
+    font-weight: bold;
+  }
+  
+  .class-list {
     display: flex;
     flex-direction: column;
-    gap: 25px;
-}
-
-.class-item {
+    gap: 20px;
+    margin-bottom: 30px;
+  }
+  
+  .class-wrapper {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+  }
+  
+  .class-container {
+    flex-grow: 1;
+  }
+  
+  .class-item {
+    background-color: #f4b07b;
+    padding: 15px 20px;
+    border-radius: 8px 8px 0 0;
     position: relative;
-    background-color: #f1a951;
-    padding: 10px 20px;
-    border-radius: 8px;
-    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.2);
-}
-
-.class-name {
-    display: block;
-    width: 100%;
-    border: none;
+    min-height: 50px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .class-name {
     background: none;
-    font-size: 18px;
-    color: #333;
-    font-weight: bold;
-}
-
-.class-name:focus {
+    border: none;
+    font-size: 16px;
+    color: #000;
+    width: calc(100% - 100px);
+  }
+  
+  .class-name:focus {
     outline: none;
-}
-
-.icons {
+  }
+  
+  .icons {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
     display: flex;
     gap: 8px;
-    position: absolute;
-    top: 10px;
-    right: 20px;
-}
-
-.icons button {
+  }
+  
+  .icons button {
     background: none;
     border: none;
     cursor: pointer;
     font-size: 16px;
-}
-
-.dropdown-content {
+    padding: 2px;
+  }
+  
+  .dropdown-content {
     display: none;
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 10px;
-    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+    background-color: white;
+    border-radius: 0 0 8px 8px;
+    padding: 20px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  }
+  
+  .class-container.active .dropdown-content {
+    display: block;
+  }
+  
+  .attributes, .methods {
+    margin-bottom: 15px;
+  }
+  
+  .attribute-item, .method-item {
+    margin-bottom: 8px;
+    font-family: monospace;
+    font-size: 14px;
+    white-space: nowrap;
+    overflow-x: auto;
+  }
+  
+  .dropdown-content hr {
+    margin: 15px 0;
+    border: none;
+    border-top: 1px solid #ddd;
+  }
+  
+  .add-method-button {
+    background-color: #e67e22;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    color: white;
+    cursor: pointer;
     margin-top: 10px;
-    text-align: left;
-}
-
-.dropdown-content ul {
-    list-style: none;
-    margin-bottom: 10px;
-}
-
-.dropdown-content ul li {
-    margin-bottom: 5px;
-}
-
-.dropdown-content hr {
-    margin: 10px 0;
-}
-
-.action-buttons {
+    font-weight: bold;
+  }
+  
+  .pick-button {
+    background-color: #e67e22;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 4px;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    white-space: nowrap;
+  }
+  
+  .action-buttons {
     display: flex;
     justify-content: flex-end;
-    gap: 10px;
-    margin-top: -10px;
     margin-bottom: 20px;
-}
-
-.pick-button, .method-button, .add-class-button {
-    background-color: #f1a951;
+  }
+  
+  .add-class-button {
+    background-color: #e67e22;
     border: none;
-    color: #333;
-    padding: 6px 12px;
-    font-weight: bold;
+    padding: 8px 16px;
     border-radius: 4px;
+    color: white;
     cursor: pointer;
-}
-
-.save-button {
-    background-color: #e89239;
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 20px;
-    font-size: 16px;
     font-weight: bold;
-    cursor: pointer;
-    margin-top: 30px;
-}
-
-.method-input {
+  }
+  
+  .save-button {
     display: block;
-    width: 90%;
-    margin: 10px auto;
-    padding: 8px;
+    margin: 0 auto;
+    background-color: #e67e22;
+    border: none;
+    padding: 10px 40px;
+    border-radius: 20px;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
     font-size: 16px;
-    border: 1px solid #ddd;
+  }
+  
+  button:hover {
+    opacity: 0.9;
+  }
+  
+  ::-webkit-scrollbar {
+    height: 4px;
+    width: 4px;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: #e67e22;
+    border-radius: 2px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+  
+  .modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 1000;
+  }
+  
+  .modal-content {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    min-width: 300px;
+  }
+  
+  .class-wrapper {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+  }
+  
+  .pick-button {
+    background-color: #e67e22;
+    border: none;
+    padding: 8px 20px;
     border-radius: 4px;
-}
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    white-space: nowrap;
+    height: 36px;
+  }
+  
+  .checkmark-button {
+    background-color: #e67e22;
+    color: white;
+    width: 36px; 
+    height: 36px; 
+    border-radius: 4px; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0; 
+    font-size: 16px; 
+  }
+  
+  #confirmPick:hover, #cancelPick:hover {
+    opacity: 0.9;
+  }
+  
+  .result-page {
+    display: none;
+    text-align: center;
+  }
+  
+  .input-page {
+    display: block;
+  }
+  
+  .diagram-container {
+    margin: 40px auto;
+    max-width: 800px;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  }
+  
+  .diagram-image {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+  }
+  
+  .project-list-button {
+    background-color: #e67e22;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 25px;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 16px;
+    margin-top: 30px;
+    transition: background-color 0.3s;
+  }
+  
+  .project-list-button:hover {
+    background-color: #d35400;
+  }
+  
+  .result-page {
+    display: none;
+    text-align: center;
+    width: 100%;
+  }
+  
+  .input-page {
+    display: block;
+  }
+  
+  .diagram-container {
+    margin: 40px auto;
+    max-width: 800px;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  }
+  
+  .diagram-image {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+  }
+  
+  .generate-class-button {
+    display: block;
+    margin: 20px auto;
+    background-color: #e67e22;
+    border: none;
+    padding: 10px 40px;
+    border-radius: 20px;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 16px;
+  }
+  
+  .project-list-button {
+    background-color: #e67e22;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 25px;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 16px;
+    margin-top: 30px;
+    transition: background-color 0.3s;
+  }
+  
+  .project-list-button:hover {
+    background-color: #d35400;
+  }

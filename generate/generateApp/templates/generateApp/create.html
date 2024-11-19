@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create a new project</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <a href="#" class="back-button">←</a>
+    <div class="container">
+        <h1 class="title">
+            <span class="title-orange">Create</span><br>
+            <span class="title-black">a new project</span>
+        </h1>
+        
+        <form class="form" id="projectForm">
+            <input 
+                type="text" 
+                id="projectName" 
+                placeholder="Type a project name" 
+                required
+            >
+            <div id="nameError" class="error">Please enter a project name</div>
+            
+            <textarea 
+                id="projectDescription" 
+                placeholder="Type a description of project" 
+                required
+            ></textarea>
+            <div id="descriptionError" class="error">Please enter a project description</div>
+            
+            <button type="submit" class="create-button">Create</button>
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

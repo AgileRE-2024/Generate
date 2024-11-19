@@ -3,54 +3,105 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Class Diagram Input</title>
-    <link rel="stylesheet" href="{% static 'css/class.css'%}">
+    <title>Class Diagram</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
     <div class="container">
         <button class="back-button">←</button>
-        <h1><span class="subheading">Input</span> Class Diagram</h1>
-
+        <h1>
+            <span class="input-text">Input</span>
+            <span class="title-text">Class Diagram</span>
+        </h1>
+        
         <div class="class-list">
-            <!-- Item 1 -->
-            <div class="class-item">
-                <input type="text" value="Presensi" class="class-name" readonly>
-                <div class="icons">
-                    <button class="edit-icon">✏️</button>
-                    <button class="delete-icon">🗑️</button>
-                    <button class="dropdown-icon">▼</button>
+            <div class="class-wrapper">
+                <div class="class-container">
+                    <div class="class-item">
+                        <input type="text" value="Presensi" class="class-name" readonly>
+                        <div class="icons">
+                            <button class="edit-icon">✏️</button>
+                            <button class="delete-icon">🗑️</button>
+                            <button class="dropdown-icon">▼</button>
+                        </div>
+                    </div>
+                    <div class="dropdown-content">
+                        <div class="attributes">
+                            <div class="attribute-item">- id: int</div>
+                            <div class="attribute-item">- studentId: int</div>
+                            <div class="attribute-item">- courseId: int</div>
+                            <div class="attribute-item">- registrationDate: Date</div>
+                            <div class="attribute-item">- status: String</div>
+                            <div class="attribute-item">- notes: String</div>
+                        </div>
+                        <hr>
+                        <div class="methods">
+                            <div class="method-item">+ registerCourse(studentId: int, courseId: int): void</div>
+                            <div class="method-item">+ getRegistrationDetails(studentId: int, courseId: int): Regist</div>
+                            <div class="method-item">+ updateRegistrationStatus(registrationId: int, status: String): void</div>
+                            <div class="method-item">+ addNotesToRegistration(registrationId: int, note: String): void</div>
+                            <div class="method-item">+ cancelRegistration(registrationId: int): void</div>
+                        </div>
+                        <button class="add-method-button">+ Add Method</button>
+                    </div>
                 </div>
-                <div class="dropdown-content">
-                    <ul class="attribute-list">
-                        <li>- Id: int <button class="edit-attribute">✏️</button></li>
-                        <li>- studentId: int <button class="edit-attribute">✏️</button></li>
-                        <li>- courseId: int <button class="edit-attribute">✏️</button></li>
-                        <li>- registrationDate: Date <button class="edit-attribute">✏️</button></li>
-                        <li>- status: String <button class="edit-attribute">✏️</button></li>
-                        <li>- notes: String <button class="edit-attribute">✏️</button></li>
-                    </ul>
-                    <hr>
-                    <ul class="method-list">
-                        <li>+ registerCourse(studentId: int, courseId: int): void <button class="edit-method">✏️</button></li>
-                        <li>+ getRegistrationDetails(studentId: int, courseId: int): Regist <button class="edit-method">✏️</button></li>
-                        <li>+ updateRegistrationStatus(registrationId: int, status: String): void <button class="edit-method">✏️</button></li>
-                        <li>+ addNotesToRegistration(registrationId: int, note: String): void <button class="edit-method">✏️</button></li>
-                        <li>+ cancelRegistration(registrationId: int): void <button class="edit-method">✏️</button></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="action-buttons">
                 <button class="pick-button">Pick</button>
-                <button class="method-button">+ Add Method</button>
-                <button class="add-class-button">+ Add Class</button> <!-- New Button -->
+            </div>
+
+            <div class="class-wrapper">
+                <div class="class-container">
+                    <div class="class-item">
+                        <input type="text" value="Presensi2" class="class-name" readonly>
+                        <div class="icons">
+                            <button class="edit-icon">✏️</button>
+                            <button class="delete-icon">🗑️</button>
+                            <button class="dropdown-icon">▼</button>
+                        </div>
+                    </div>
+                    <div class="dropdown-content">
+                        <div class="attributes">
+                            <div class="attribute-item">- id: int</div>
+                            <div class="attribute-item">- studentId: int</div>
+                            <div class="attribute-item">- courseId: int</div>
+                            <div class="attribute-item">- date: Date</div>
+                            <div class="attribute-item">- status: String</div>
+                            <div class="attribute-item">- notes: String</div>
+                            <div class="attribute-item">- totalAttendancePercentage: double</div>
+                        </div>
+                        <hr>
+                        <div class="methods">
+                            <div class="method-item">+ markAttendance(studentId: int, courseId: int, date: Date, status: String, notes: String): void</div>
+                            <div class="method-item">+ getAttendanceRecordByDateRange(studentId: int, courseId: int, startDate: Date, endDate: Date): List&lt;Presensi&gt;</div>
+                            <div class="method-item">+ calculateAttendancePercentage(studentId: int, courseId: int, startDate: Date, endDate: Date): double</div>
+                            <div class="method-item">+ updateAttendance(recordId: int, status: String, notes: String): void</div>
+                            <div class="method-item">+ getStatus(): String</div>
+                            <div class="method-item">+ addNoteToRecord(recordId: int, note: String): void</div>
+                        </div>
+                        <button class="add-method-button">+ Add Method</button>
+                    </div>
+                </div>
+                <button class="pick-button">Pick</button>
             </div>
         </div>
+
+        <div class="action-buttons">
+            <button class="add-class-button">+ Add Class</button>
         </div>
+
+        <div class="result-page">
+            <h1>
+              <span class="input-text">Result</span>
+              <span class="title-text">Class Diagram</span>
+            </h1>
+            <div class="diagram-container">
+              <img src="/api/placeholder/800/600" alt="Class Diagram" class="diagram-image">
+            </div>
+            <button class="project-list-button">Go to Project List</button>
+          </div>
 
         <button class="save-button">Save</button>
+        <button class="generate-class-button">Generate Class Diagram</button>
     </div>
-
     <script src="script.js"></script>
 </body>
 </html>
