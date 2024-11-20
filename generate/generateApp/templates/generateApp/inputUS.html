@@ -48,7 +48,7 @@
                 <label for="why">Why:</label>
                 <input type="text" id="why" placeholder="Enter why">
             </div>
-            <button type="button" class="save-button" id="saveBtn">Save</button>
+            <button type="button" class="save-button" id="saveBtn" data-url="{% url 'resultUS' %}">Save</button>
         </form>
     </div>
 
@@ -68,5 +68,6 @@
             window.location.href = "{% url 'resultUS' %}";
         });
     </script>
+    <script src="{% static 'js/inputUS.js' %}"></script>
 </body>
 </html>

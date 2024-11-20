@@ -33,18 +33,60 @@ class GUI(models.Model):
     def __str__(self):
         return f"GUI for {self.project.nama_project}"
 
+class UserStory(models.Model):
+    id_user_story = models.AutoField(primary_key=True)
+    input_who = models.TextField()
+    input_what = models.TextField()
+    input_why = models.TextField()
+
+    def __str__(self):
+        return f"User Story ID: {self.id_user_story}"
+
+# User Story Scenario
 
 class UserStoryScenario(models.Model):
     id_user_story_scenario = models.AutoField(primary_key=True)
     fitur_user_story_scenario = models.CharField(max_length=200)
-    scenario_user_story_scenario = models.TextField()
-    input_given = models.TextField(blank=True, null=True)
-    input_when = models.TextField(blank=True, null=True)
-    input_then = models.TextField(blank=True, null=True)
-    input_and = models.TextField(blank=True, null=True)
 
     def __str__(self):
         return self.fitur_user_story_scenario
+
+
+class Given(models.Model):
+    id_given = models.AutoField(primary_key=True)
+    user_story_scenario = models.ForeignKey(UserStoryScenario, related_name='givens', on_delete=models.CASCADE)
+    description = models.TextField()
+
+    def __str__(self):
+        return f"Given: {self.description[:50]}"
+
+
+class When(models.Model):
+    id_when = models.AutoField(primary_key=True)
+    given = models.ForeignKey(Given, related_name='whens', on_delete=models.CASCADE)
+    description = models.TextField()
+
+    def __str__(self):
+        return f"When: {self.description[:50]}"
+
+
+class Then(models.Model):
+    id_then = models.AutoField(primary_key=True)
+    when = models.ForeignKey(When, related_name='thens', on_delete=models.CASCADE)
+    description = models.TextField()
+
+    def __str__(self):
+        return f"Then: {self.description[:50]}"
+
+
+class And(models.Model):
+    id_and = models.AutoField(primary_key=True)
+    then = models.ForeignKey(Then, related_name='ands', on_delete=models.CASCADE)
+    description = models.TextField()
+
+    def __str__(self):
+        return f"And: {self.description[:50]}"
+
 
 
 class ActivityDiagram(models.Model):

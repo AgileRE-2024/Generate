@@ -40,9 +40,15 @@
                 <label>Result:</label>
                 <textarea id="result" readonly></textarea>
             </div>
-            <button type="submit" class="save-button">Go to Project List</button>
-            <button type="submit" class="save-button">Generate to Scenario</button>
-            <button type="submit" class="save-button">Generate to Sequence</button>
+        
+            <!-- Tombol menuju daftar proyek -->
+            <button type="button" class="save-button" id="goToProjectList" data-url="{% url 'homepage' %}">Go to Project List</button>
+            
+            <!-- Tombol menuju scenario -->
+            <button type="button" class="save-button" id="generateToScenario" data-url="{% url 'inputUSS' %}">Generate to Scenario</button>
+            
+            <!-- Tombol menuju sequence -->
+            <button type="button" class="save-button" id="generateToSequence" data-url="{% url 'sequence' %}">Generate to Sequence</button>
         </form>
     </div>
 

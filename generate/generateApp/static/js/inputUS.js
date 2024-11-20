@@ -1,11 +1,26 @@
-// Optional: Add JavaScript validation (to complement HTML `required` attribute)
-document.getElementById('userStoryForm').addEventListener('submit', function (event) {
-    const who = document.getElementById('who').value.trim();
-    const what = document.getElementById('what').value.trim();
-    const why = document.getElementById('why').value.trim();
+// Save input values and navigate to resultUS.html
+function saveUserStory() {
+    // Ambil nilai input dari form
+    const whoInput = document.getElementById("who").value.trim();
+    const whatInput = document.getElementById("what").value.trim();
+    const whyInput = document.getElementById("why").value.trim();
 
-    if (!who || !what || !why) {
-        event.preventDefault();
-        alert('Please fill out all fields!');
+    // Validasi input
+    if (!whoInput || !whatInput || !whyInput) {
+        alert("Please fill in all fields!");
+        return;
     }
-});
+
+    // Format input menjadi user story
+    const userStory = `As a ${whoInput.toLowerCase()}, I want to ${whatInput} So that I can ${whyInput}.`;
+
+    // Simpan user story ke localStorage
+    localStorage.setItem("userStory", userStory);
+
+    // Redirect ke halaman resultUS.html
+    const resultURL = document.getElementById("saveBtn").getAttribute("data-url");
+    window.location.href = resultURL;
+}
+
+// Tambahkan event listener untuk tombol Save
+document.getElementById("saveBtn").addEventListener("click", saveUserStory);
