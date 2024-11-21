@@ -14,4 +14,5 @@ urlpatterns = [
     path('activity/', views.activity, name="activity"),
     path('sequence/', views.sequence, name="sequence"),
     path('classDiag/', views.classDiag, name="classDiag"),
+    path('create/', views.create, name="create"),
 ]

@@ -50,3 +50,7 @@ def sequence(request):
 def classDiag(request):
     context = {}
     return render(request, "generateApp/classDiag.html", context)
+
+def create(request):
+    context = {}
+    return render(request, "generateApp/create.html", context)

@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+    {% load static %}
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Create a new project</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="{% static 'css/create.css' %}">
 </head>
 <body>
     <a href="#" class="back-button">←</a>
@@ -30,7 +31,7 @@
             ></textarea>
             <div id="descriptionError" class="error">Please enter a project description</div>
             
-            <button type="submit" class="create-button">Create</button>
+            <button type="submit" onclick="window.location.href = 'next-page.html'" class="create-button">Create</button>
         </form>
     </div>
 

@@ -36,7 +36,7 @@
         <section class="intro-section">
             <h1>Generate it to <span class="highlight">your needs</span></h1>
             <p>Seamlessly convert user stories into detailed use cases, sequence diagrams, and activity diagrams. Streamline your development process with automated, visual documentation that ensures your team stays aligned from planning to implementation.</p>
-            <a href="{% url 'gui' %}" class="create-button">
+            <a href="{% url 'create' %}" class="create-button">
                 Create New Project
             </a>
             
@@ -77,7 +77,7 @@
                                 <a href="{% url 'inputUS' %}"><span class="done-icon">✔️</span>User Story</a>
                                 <a href="{% url 'inputUSS' %}"><span class="done-icon">✔️</span>User Story Scenario</a>
                                 <a href="{% url 'activity' %}">Activity Diagram</a>
-                                <a href="#">Class Diagram</a>
+                                <a href="{% url 'classDiag' %}">Class Diagram</a>
                                 <a href="{% url 'gui' %}">GUI</a>
                             </div>
                         </td>
@@ -98,7 +98,7 @@
                                 <a href="{% url 'inputUS' %}"><span class="done-icon">✔️</span>User Story</a>
                                 <a href="{% url 'inputUSS' %}"><span class="done-icon">✔️</span>User Story Scenario</a>
                                 <a href="{% url 'activity' %}">Activity Diagram</a>
-                                <a href="#">Class Diagram</a>
+                                <a href="{% url 'classDiag' %}">Class Diagram</a>
                                 <a href="{% url 'gui' %}">GUI</a>
                             </div>
                         </td>
