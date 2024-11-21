@@ -61,6 +61,21 @@
         // Combine results
         const result = `${who},${what} ${why}`;
         document.getElementById("result").textContent = result;
+
+        // Event listener for "Go to Project List" button
+        document.getElementById("goToProjectList").addEventListener("click", function() {
+            window.location.href = this.getAttribute("data-url");
+        });
+
+        // Event listener for "Generate to Scenario" button
+        document.getElementById("generateToScenario").addEventListener("click", function() {
+            window.location.href = this.getAttribute("data-url");
+        });
+
+        // Event listener for "Generate to Sequence" button
+        document.getElementById("generateToSequence").addEventListener("click", function() {
+            window.location.href = this.getAttribute("data-url");
+        });
     </script>
 </body>
 </html>

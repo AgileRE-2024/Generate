@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Input User Story</title>
+    <title>Result User Story Scenario</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/2.5.0/remixicon.min.css">
-    <link rel="stylesheet" href="{% static 'css/resultUSS.css' %}s">
+    <link rel="stylesheet" href="{% static 'css/resultUSS.css' %}">
 </head>
 <body>
     <header class="main-header">
@@ -52,9 +52,24 @@ Then: The system displays a form to enter search parameters (e.g., course and cu
 When: The student selects the desired course and date range (e.g., from January 1 to January 14) and presses the "Show History" button.
 Then: The system displays the student's attendance history in a table that includes the date, attendance status (present/absent), and total attendance percentage for the selected period.</textarea>
             </div>
-            <button type="submit" class="save-button">Go to Project List</button>
-            <button type="submit" class="save-button">Generate to Activity</button>
+
+            <button type="button" class="save-button" id="homeButton" data-url="{% url 'homepage' %}">Go to Homepage</button>
+            <button type="button" class="save-button" id="activityButton" data-url="{% url 'activity' %}">Generate to Activity</button>
+            
         </form>
     </div>
+
+    <script>
+        document.getElementById('homeButton').addEventListener('click', function() {
+        var url = this.getAttribute('data-url');  // Ambil URL dari data-url
+        window.location.href = url;  // Arahkan pengguna ke URL
+    });
+
+    document.getElementById('activityButton').addEventListener('click', function() {
+        var url = this.getAttribute('data-url');  // Ambil URL dari data-url
+        window.location.href = url;  // Arahkan pengguna ke URL
+    });
+
+    </script>
 </body>
 </html>

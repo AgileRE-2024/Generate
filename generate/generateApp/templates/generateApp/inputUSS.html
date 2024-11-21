@@ -155,10 +155,65 @@
             </div>
         </div>
 
-        <button class="save-button">Save</button>
+        <button type="button" class="save-button" id="goToResultUSS" data-url="{% url 'resultUSS' %}">Save</button>
     </div>
 
     <script src="{% static 'inputUSS.js'}"></script>
-    </div>
+    <script>
+         // Function to add a new "Given", "When", or "Then" block
+         document.querySelectorAll('.plus').forEach(button => {
+            button.addEventListener('click', function() {
+                const newCard = document.createElement('div');
+                newCard.classList.add('icard');
+                newCard.innerHTML = `
+                    <div class="icon">
+                        <button class="plus"><i class="ri-add-circle-fill"></i></button>
+                    </div>
+                    <div class="card">
+                        <div class="section-title">
+                            <span contenteditable="true">New Title:</span>
+                            <div class="icons">
+                                <button class="delete"><i class="ri-delete-bin-7-fill"></i></button>
+                            </div>
+                        </div>
+                        <div class="section-content">
+                            <p contenteditable="true">New content goes here...</p>
+                            <div class="icons">
+                                <button class="edit"><i class="ri-pencil-fill"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                this.parentNode.insertBefore(newCard, this.parentNode.lastElementChild);
+                attachEventListeners(); // Re-attach event listeners for new buttons
+            });
+        });
+
+        // Function to delete an item
+        function attachEventListeners() {
+            // Edit button functionality
+            document.querySelectorAll('.edit').forEach(button => {
+                button.addEventListener('click', function() {
+                    const content = this.closest('.section-content').querySelector('p');
+                    content.setAttribute('contenteditable', 'true');
+                    content.focus();
+                });
+            });
+
+            // Delete button functionality
+            document.querySelectorAll('.delete').forEach(button => {
+                button.addEventListener('click', function() {
+                        this.closest('.icard').remove();
+                });
+            });
+        }
+
+        // Initialize event listeners for existing buttons
+        attachEventListeners();
+
+        document.getElementById("goToResultUSS").addEventListener("click", function() {
+            window.location.href = this.getAttribute("data-url")
+        });
+    </script>
 </body>
 </html>
