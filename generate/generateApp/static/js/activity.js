@@ -166,7 +166,7 @@ document.addEventListener('DOMContentLoaded', function() {
       resultPage.style.display = 'block';
       
       // Set the image source - replace 'path_to_your_image.png' with your actual image path
-      document.getElementById('activity-diagram-result').src = 'path_to_your_image.png';
+      document.getElementById('activity-diagram-result').src = 'images/act.png';
       
       // Hide the buttons
       document.querySelector('.save-btn').style.display = 'none';

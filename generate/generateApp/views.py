@@ -1,4 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect, get_object_or_404
+from .forms import *
+from .models import *
+
 
 # Create your views here.
 
@@ -16,12 +19,33 @@ def login(request):
     return render(request, "generateApp/login.html", context)
 
 def inputUS(request):
-    context = {}
-    return render(request, "generateApp/inputUS.html", context)
+    """
+    View untuk memasukkan User Story baru.
+    Setelah menyimpan, redirect ke resultUS dengan ID User Story yang baru disimpan.
+    """
+    if request.method == 'POST':
+        form = UserStoryForm(request.POST)
+        if form.is_valid():
+            user_story = form.save()  # Simpan data dan dapatkan instance
+            return redirect('resultUS', user_story_id=user_story.id_user_story)  # Parsing ID
+    else:
+        form = UserStoryForm()
+    
+    return render(request, 'generateApp/inputUS.html', {'form': form})
 
-def resultUS(request):
-    context = {}
-    return render(request, "generateApp/resultUS.html", context)
+
+def resultUS(request, user_story_id=None):
+    """
+    View untuk menampilkan User Story.
+    Jika ID diberikan, hanya menampilkan User Story dengan ID tersebut.
+    """
+    if user_story_id:
+        user_story = get_object_or_404(UserStory, id_user_story=user_story_id)
+        user_stories = [user_story]  # Hanya satu data yang ditampilkan
+    else:
+        user_stories = UserStory.objects.all()  # Semua data jika ID tidak diberikan
+    
+    return render(request, 'generateApp/resultUS.html', {'user_stories': user_stories})
 
 def homepage(request):
     context = {}
