@@ -198,6 +198,22 @@ h1 span {
     color: #333;
 }
 
+.text-input {
+    width: 100%; /* Atur lebar input menjadi penuh dalam container */
+    max-width: 600px; /* Batas maksimum panjang input */
+    padding: 10px; /* Tambahkan ruang di dalam input */
+    font-size: 16px; /* Sesuaikan ukuran teks */
+    border: 1px solid #ccc; /* Warna border */
+    border-radius: 4px; /* Membulatkan sudut */
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1); /* Tambahkan efek bayangan */
+    transition: border-color 0.3s; /* Efek transisi saat di-hover */
+}
+
+.text-input:focus {
+    border-color: #007bff; /* Warna border saat fokus */
+    outline: none; /* Hilangkan outline default */
+}
+
 .icons {
     display: flex;
     gap: 8px;
@@ -269,4 +285,3 @@ h1 span {
 .save-button:hover {
     background-color: #c77a4b;
 }
-
