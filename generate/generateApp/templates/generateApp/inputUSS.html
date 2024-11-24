@@ -156,64 +156,94 @@
         </div>
 
         <button type="button" class="save-button" id="goToResultUSS" data-url="{% url 'resultUSS' %}">Generate to Scenario</button>
+        <button type="button" class="save-button" id="save" data-url="">Save</button>
     </div>
 
     <script src="{% static 'inputUSS.js'}"></script>
     <script>
-         // Function to add a new "Given", "When", or "Then" block
-         document.querySelectorAll('.plus').forEach(button => {
-            button.addEventListener('click', function() {
-                const newCard = document.createElement('div');
-                newCard.classList.add('icard');
-                newCard.innerHTML = `
-                    <div class="icon">
-                        <button class="plus"><i class="ri-add-circle-fill"></i></button>
-                    </div>
-                    <div class="card">
-                        <div class="section-title">
-                            <span contenteditable="true">New Title:</span>
-                            <div class="icons">
-                                <button class="delete"><i class="ri-delete-bin-7-fill"></i></button>
+        // Function to add a new block dynamically
+        document.querySelectorAll('.plus').forEach(button => {
+            button.addEventListener('click', function () {
+                const blockType = prompt("Enter block type (Given, When, Then):", "When");
+                if (blockType && ["Given", "When", "Then"].includes(blockType)) {
+                    const newCard = document.createElement('div');
+                    newCard.classList.add('icard');
+                    newCard.innerHTML = `
+                        <div class="icon">
+                            <button class="plus"><i class="ri-add-circle-fill"></i></button>
+                        </div>
+                        <div class="card">
+                            <div class="section-title">
+                                <span>${blockType}:</span>
+                                <div class="icons">
+                                    <button class="edit"><i class="ri-pencil-fill"></i></button>
+                                    <button class="delete"><i class="ri-delete-bin-7-fill"></i></button>
+                                </div>
+                            </div>
+                            <div class="section-content">
+                                <input type="text" class="text-input" placeholder="Type Attribute">
+                                <div class="icons">
+                                    <button class="edit"><i class="ri-pencil-fill"></i></button>
+                                </div>
                             </div>
                         </div>
-                        <div class="section-content">
-                            <p contenteditable="true">New content goes here...</p>
-                            <div class="icons">
-                                <button class="edit"><i class="ri-pencil-fill"></i></button>
-                            </div>
-                        </div>
-                    </div>
-                `;
-                this.parentNode.insertBefore(newCard, this.parentNode.lastElementChild);
-                attachEventListeners(); // Re-attach event listeners for new buttons
+                    `;
+                    this.closest('.container').insertBefore(newCard, this.closest('.icard').nextSibling);
+                    attachEventListeners(); // Re-attach event listeners for new buttons
+                } else {
+                    alert("Invalid block type. Please enter Given, When, or Then.");
+                }
             });
         });
-
-        // Function to delete an item
+    
+        // Function to attach event listeners for new cards
         function attachEventListeners() {
             // Edit button functionality
             document.querySelectorAll('.edit').forEach(button => {
-                button.addEventListener('click', function() {
-                    const content = this.closest('.section-content').querySelector('p');
-                    content.setAttribute('contenteditable', 'true');
+                button.addEventListener('click', function () {
+                    const content = this.closest('.section-content').querySelector('input');
+                    content.removeAttribute('readonly');
                     content.focus();
                 });
             });
-
+    
             // Delete button functionality
             document.querySelectorAll('.delete').forEach(button => {
-                button.addEventListener('click', function() {
-                        this.closest('.icard').remove();
+                button.addEventListener('click', function () {
+                    this.closest('.icard').remove();
                 });
             });
         }
-
+    
         // Initialize event listeners for existing buttons
         attachEventListeners();
-
-        document.getElementById("goToResultUSS").addEventListener("click", function() {
-            window.location.href = this.getAttribute("data-url")
+    
+        // Redirect to result page
+        document.getElementById("goToResultUSS").addEventListener("click", function () {
+            window.location.href = this.getAttribute("data-url");
         });
+
+        document.getElementById("save").addEventListener("click", function () {
+            const inputs = document.querySelectorAll('.text-input');
+            let isAllFilled = true;
+
+            // Cek semua input
+            inputs.forEach(input => {
+                if (!input.value.trim()) {
+                    isAllFilled = false;
+                }
+            });
+
+            // Validasi input
+            if (!isAllFilled) {
+                alert("Data belum diisi");
+            } else {
+                alert("Data berhasil disimpan");
+                window.location.href = this.getAttribute("data-url");
+            }
+    });
+
     </script>
+    
 </body>
 </html>

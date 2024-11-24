@@ -35,40 +35,13 @@
             <h1>Input <span><br>User Story</br></span></h1>
         </div>
 
-        <form id="userStoryForm" class="user-story-form">
+        <form class="user-story-form" method="post">
             {% csrf_token %}
-            <div class="form-group">
-                <label for="who">Who:</label>
-                <input type="text" id="who" placeholder="Enter who">
-            </div>
-            <div class="form-group">
-                <label for="what">What:</label>
-                <input type="text" id="what" placeholder="Enter what">
-            </div>
-            <div class="form-group">
-                <label for="why">Why:</label>
-                <input type="text" id="why" placeholder="Enter why">
-            </div>
-            <button type="button" class="save-button" id="saveBtn" data-url="{% url 'resultUS' %}">Generate to User Story</button>
+            {{ form.as_p }}
+            <button type="submit" class="save-button">Save</button>
         </form>
+        
     </div>
 
-    <script>
-        // Save input values to localStorage and navigate to resultUS.html
-        document.getElementById("saveBtn").addEventListener("click", function () {
-            const who = document.getElementById("who").value;
-            const what = document.getElementById("what").value;
-            const why = document.getElementById("why").value;
-
-            // Save to localStorage
-            localStorage.setItem("who", who);
-            localStorage.setItem("what", what);
-            localStorage.setItem("why", why);
-
-            // Redirect to resultUS.html
-            window.location.href = "{% url 'resultUS' %}";
-        });
-    </script>
-    <script src="{% static 'js/inputUS.js' %}"></script>
 </body>
 </html>
