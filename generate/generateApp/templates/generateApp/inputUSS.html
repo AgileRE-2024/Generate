@@ -46,37 +46,37 @@
         </div>
 
         <div class="icard">
-            <div class="icon">
-                <button class="plus"><i class="ri-add-circle-fill"></i></i></button>
-            </div>
-            <div class="card">
-                <div class="section-title">Given:
-                    <div class="icons">
-                        <div class="icon">
-                            <button class="plus"><i class="ri-add-circle-fill"></i></i></button>
-                        </div>
-                        <button class="delete"><i class="ri-delete-bin-7-fill"></i></i></button>
-                    </div>
+                <div class="icon">
+                    <button class="plus"><i class="ri-add-circle-fill"></i></i></button>
                 </div>
-                <div class="section-content">
-                    <input type="text" id="what" class="text-input" placeholder="Type Attribute">
-                    <div class="icons">
-                        <button class="edit"><i class="ri-pencil-fill"></i></i></button>
-                        <div class="icon">
-                            <button class="plus"><i class="ri-add-circle-fill"></i></i></button>
+                <div class="card">
+                    <div class="section-title">Given:
+                        <div class="icons">
+                            <div class="icon">
+                                <button class="plus"><i class="ri-add-circle-fill"></i></i></button>
+                            </div>
+                            <button class="delete"><i class="ri-delete-bin-7-fill"></i></i></button>
                         </div>
                     </div>
-                </div>
-                <div class="section-content">
-                    <input type="text" id="what" class="text-input" placeholder="Type Attribute">
-                    <div class="icons">
-                        <button class="edit"><i class="ri-pencil-fill"></i></i></button>
-                        <div class="icon">
-                            <button class="plus"><i class="ri-add-circle-fill"></i></i></button>
+                    <div class="section-content">
+                        <input type="text" id="what" class="text-input" placeholder="Type Attribute">
+                        <div class="icons">
+                            <button class="edit"><i class="ri-pencil-fill"></i></i></button>
+                            <div class="icon">
+                                <button class="plus"><i class="ri-add-circle-fill"></i></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="section-content">
+                        <input type="text" id="what" class="text-input" placeholder="Type Attribute">
+                        <div class="icons">
+                            <button class="edit"><i class="ri-pencil-fill"></i></i></button>
+                            <div class="icon">
+                                <button class="plus"><i class="ri-add-circle-fill"></i></i></button>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
         </div>
 
         <div class="icard">
@@ -129,6 +129,8 @@
                 </div>
                 <div class="section-content">
                     <input type="text" id="what" class="text-input" placeholder="Type Attribute">
+                    {% csrf_token %}
+                    {{ form.as_p }}
                     <div class="icons">
                         <button class="edit"><i class="ri-pencil-fill"></i></i></button>
                     </div>
@@ -154,7 +156,6 @@
                 </div>
             </div>
         </div>
-
         <button type="button" class="save-button" id="goToResultUSS" data-url="{% url 'resultUSS' %}">Generate to Scenario</button>
         <button type="button" class="save-button" id="save" data-url="">Save</button>
     </div>

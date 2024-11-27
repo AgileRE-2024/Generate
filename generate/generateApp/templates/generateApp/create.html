@@ -15,7 +15,9 @@
             <span class="title-black">a new project</span>
         </h1>
         
-        <form class="form" id="projectForm">
+        <form method="POST" class="form" id="projectForm">
+            {% csrf_token %}
+            {{ form.as_p }}
             <input 
                 type="text" 
                 id="projectName" 
@@ -31,10 +33,43 @@
             ></textarea>
             <div id="descriptionError" class="error">Please enter a project description</div>
             
-            <button type="submit" onclick="window.location.href = 'next-page.html'" class="create-button">Create</button>
+            <button type="submit" class="create-button" id="generate" data-url="{% url 'generate' %}">Create</button>
         </form>
     </div>
 
-    <script src="script.js"></script>
+    <script src="{% static 'create.js' %}"></script>
+    <script>
+           document.getElementById("projectForm").addEventListener("submit", function (event) {
+    event.preventDefault(); // Mencegah reload halaman
+
+    const projectName = document.getElementById("projectName").value;
+    const projectDescription = document.getElementById("projectDescription").value;
+
+    if (projectName && projectDescription) {
+        // Ambil data lama dari localStorage
+        let projects = JSON.parse(localStorage.getItem("projects")) || [];
+
+        // Tambahkan project baru
+        const newProject = {
+            id: projects.length + 1,
+            name: projectName,
+            description: projectDescription,
+            createdAt: new Date().toLocaleString(),
+            updatedAt: new Date().toLocaleString(),
+        };
+        projects.push(newProject);
+
+        // Simpan kembali ke localStorage
+        localStorage.setItem("projects", JSON.stringify(projects));
+
+        // Arahkan ke halaman "generate"
+        const generateUrl = document.getElementById("generate").getAttribute("data-url");
+        window.location.href = generateUrl;
+    } else {
+        alert("Please fill in all fields.");
+    }
+});
+
+    </script>
 </body>
 </html>

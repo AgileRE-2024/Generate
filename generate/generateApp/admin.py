@@ -34,7 +34,17 @@ class UserStoryAdmin(admin.ModelAdmin):
     search_fields = ('input_who', 'input_what', 'input_why')
 
 
-# Inline admin untuk When, Then, dan And
+# Inline untuk membantu menampilkan data yang saling terkait
+class UserStoryScenarioInline(admin.TabularInline):
+    model = UserStoryScenario
+    extra = 1
+
+
+class GivenInline(admin.TabularInline):
+    model = Given
+    extra = 1
+
+
 class WhenInline(admin.TabularInline):
     model = When
     extra = 1
@@ -50,53 +60,30 @@ class AndInline(admin.TabularInline):
     extra = 1
 
 
-# Inline admin untuk Given
-class GivenInline(admin.TabularInline):
-    model = Given
-    extra = 1
 
-
-# Admin untuk Given
-@admin.register(Given)
-class GivenAdmin(admin.ModelAdmin):
-    list_display = ('id_given', 'user_story_scenario', 'description')
-    search_fields = ('description',)
-    list_filter = ('user_story_scenario',)
-    inlines = [WhenInline]
-
-
-# Admin untuk When
-@admin.register(When)
-class WhenAdmin(admin.ModelAdmin):
-    list_display = ('id_when', 'given', 'description')
-    search_fields = ('description',)
-    list_filter = ('given',)
-    inlines = [ThenInline]
-
-
-# Admin untuk Then
-@admin.register(Then)
-class ThenAdmin(admin.ModelAdmin):
-    list_display = ('id_then', 'when', 'description')
-    search_fields = ('description',)
-    list_filter = ('when',)
-    inlines = [AndInline]
-
-
-# Admin untuk And
-@admin.register(And)
-class AndAdmin(admin.ModelAdmin):
-    list_display = ('id_and', 'then', 'description')
-    search_fields = ('description',)
-    list_filter = ('then',)
-
-
-# Admin untuk UserStoryScenario
 @admin.register(UserStoryScenario)
 class UserStoryScenarioAdmin(admin.ModelAdmin):
-    list_display = ('id_user_story_scenario', 'fitur_user_story_scenario')
-    search_fields = ('fitur_user_story_scenario',)
-    inlines = [GivenInline]  # Masukkan GivenInline 
+    list_display = ('id', 'fitur_user_story_scenario', 'user_story')
+
+
+@admin.register(Given)
+class GivenAdmin(admin.ModelAdmin):
+    list_display = ('id', 'description', 'user_story')
+
+
+@admin.register(When)
+class WhenAdmin(admin.ModelAdmin):
+    list_display = ('id', 'description', 'user_story', 'given')
+
+
+@admin.register(Then)
+class ThenAdmin(admin.ModelAdmin):
+    list_display = ('id', 'description', 'user_story', 'when')
+
+
+@admin.register(And)
+class AndAdmin(admin.ModelAdmin):
+    list_display = ('id', 'description', 'user_story', 'then')
 
 
 # Admin untuk ActivityDiagram

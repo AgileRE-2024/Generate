@@ -78,3 +78,7 @@ def classDiag(request):
 def create(request):
     context = {}
     return render(request, "generateApp/create.html", context)
+
+def generate(request):
+    context = {}
+    return render(request, "generateApp/generate.html", context)

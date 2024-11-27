@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+    {% load static %}
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Generate it to Your Own</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="{% static 'css/generate.css' %}">
 </head>
 <body>
     <div class="container">
@@ -14,25 +15,25 @@
         </header>
         
         <main class="content">
-            <a href="/use-case.html" class="card-container">
+            <a href="{% url 'homepage' %}" class="card-container">
                 <div class="card">
                     <div class="image-placeholder">
-                        <img src="usecase.png" alt="Use Case Diagram">
+                        <img src="{% static 'images/usecase.png'%}" alt="Use Case Diagram">
                     </div>
                     <p class="card-title">Use Case Diagram</p>
                 </div>
             </a>
 
-            <a href="/user-story.html" class="card-container">
+            <a href="{% url 'homepage' %}" class="card-container">
                 <div class="card">
                     <div class="image-placeholder">
-                        <img src="userstory.png" alt="User Story">
+                        <img src="{% static 'images/userstory.png' %}" alt="User Story">
                     </div>
                     <p class="card-title">User Story</p>
                 </div>
             </a>
         </main>
     </div>
-    <script src="script.js"></script>
+    <script src="{% static 'generate.js' %}"></script>
 </body>
 </html>

@@ -33,6 +33,7 @@ class GUI(models.Model):
     def __str__(self):
         return f"GUI for {self.project.nama_project}"
 
+# User Story
 class UserStory(models.Model):
     id_user_story = models.AutoField(primary_key=True)
     input_who = models.TextField()
@@ -42,27 +43,28 @@ class UserStory(models.Model):
     def __str__(self):
         return f"User Story ID: {self.id_user_story}"
 
-# User Story Scenario
 
+# User Story Scenario
 class UserStoryScenario(models.Model):
-    id_user_story_scenario = models.AutoField(primary_key=True)
-    fitur_user_story_scenario = models.CharField(max_length=200)
+    user_story = models.ForeignKey(UserStory, related_name='scenarios', on_delete=models.CASCADE)
+    fitur_user_story_scenario = models.CharField(max_length=255)
 
     def __str__(self):
         return self.fitur_user_story_scenario
 
 
+# Given
 class Given(models.Model):
-    id_given = models.AutoField(primary_key=True)
-    user_story_scenario = models.ForeignKey(UserStoryScenario, related_name='givens', on_delete=models.CASCADE)
+    user_story = models.ForeignKey(UserStory, related_name='givens', on_delete=models.CASCADE)
     description = models.TextField()
 
     def __str__(self):
         return f"Given: {self.description[:50]}"
 
 
+# When
 class When(models.Model):
-    id_when = models.AutoField(primary_key=True)
+    user_story = models.ForeignKey(UserStory, related_name='whens', on_delete=models.CASCADE)
     given = models.ForeignKey(Given, related_name='whens', on_delete=models.CASCADE)
     description = models.TextField()
 
@@ -70,8 +72,9 @@ class When(models.Model):
         return f"When: {self.description[:50]}"
 
 
+# Then
 class Then(models.Model):
-    id_then = models.AutoField(primary_key=True)
+    user_story = models.ForeignKey(UserStory, related_name='thens', on_delete=models.CASCADE)
     when = models.ForeignKey(When, related_name='thens', on_delete=models.CASCADE)
     description = models.TextField()
 
@@ -79,8 +82,9 @@ class Then(models.Model):
         return f"Then: {self.description[:50]}"
 
 
+# And
 class And(models.Model):
-    id_and = models.AutoField(primary_key=True)
+    user_story = models.ForeignKey(UserStory, related_name='ands', on_delete=models.CASCADE)
     then = models.ForeignKey(Then, related_name='ands', on_delete=models.CASCADE)
     description = models.TextField()
 
@@ -119,3 +123,5 @@ class SequenceDiagram(models.Model):
 
     def __str__(self):
         return f"Sequence Diagram for {self.class_diagram.pilihan_GUI}"
+
+

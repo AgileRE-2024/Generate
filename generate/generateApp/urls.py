@@ -15,4 +15,5 @@ urlpatterns = [
     path('sequence/', views.sequence, name="sequence"),
     path('classDiag/', views.classDiag, name="classDiag"),
     path('create/', views.create, name="create"),
+    path('generate/', views.generate, name="generate"),
 ]

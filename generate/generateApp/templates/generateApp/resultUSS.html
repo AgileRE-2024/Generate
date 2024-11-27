@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-    {% load static %}
+{% load static %}
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,20 +11,15 @@
 <body>
     <header class="main-header">
         <div class="logo">
-            <img src="logoo.png" alt="Generate Logo" class="logo-image"> <!-- Ganti "logo.png" dengan URL logo Anda -->
+            <img src="logoo.png" alt="Generate Logo" class="logo-image">
         </div>
-        
         <nav class="nav-links">
             <a href="#">Home</a>
-            <div class="nav">
-                <a href="#">About <i class="ri-arrow-down-s-line"></i></a>
-                <a href="#">Pages <i class="ri-arrow-down-s-line"></i></a>
-                <a href="#">Blog <i class="ri-arrow-down-s-line"></i></a>
-            </div>
+            <a href="#">About</a>
+            <a href="#">Pages</a>
+            <a href="#">Blog</a>
             <a href="#">My Projects</a>
         </nav>
-        
-        
         <div class="profile-icon">
             <i class="ri-account-circle-line"></i>
         </div>
@@ -36,40 +31,55 @@
         </div>
 
         <div>
-            <h1>Result <span> <br>
-                User Story Scenario</br></span></h1>
+            <h1>Result <span>User Story Scenario</span></h1>
         </div>
-        
-        <div class="text">
-            Skenario: Viewing Attendance History Based on Courses and Time Periods (Success)
-        </div>
+
+        {% if scenarios %}
+            {% for scenario in scenarios %}
+            <div class="text">
+                <h2>{{ scenario.fitur_user_story_scenario }}</h2>
+                <ul>
+                    {% for given in scenario.givens.all %}
+                    <li><strong>Given:</strong> {{ given.description }}</li>
+                    <ul>
+                        {% for when in given.whens.all %}
+                        <li><strong>When:</strong> {{ when.description }}</li>
+                        <ul>
+                            {% for then in when.thens.all %}
+                            <li><strong>Then:</strong> {{ then.description }}</li>
+                            <ul>
+                                {% for and_instance in then.ands.all %}
+                                <li><strong>And:</strong> {{ and_instance.description }}</li>
+                                {% endfor %}
+                            </ul>
+                            {% endfor %}
+                        </ul>
+                        {% endfor %}
+                    </ul>
+                    {% endfor %}
+                </ul>
+            </div>
+            {% endfor %}
+        {% else %}
+            <p>No scenarios found.</p>
+        {% endif %}
 
         <form class="user-story-form">
-            <div class="form-group">
-                <textarea id="who" placeholder="">Given: The student is on the main page of the attendance system and has logged into their account. 
-When: The student selects the "Attendance History" menu from the dashboard.
-Then: The system displays a form to enter search parameters (e.g., course and custom date range).
-When: The student selects the desired course and date range (e.g., from January 1 to January 14) and presses the "Show History" button.
-Then: The system displays the student's attendance history in a table that includes the date, attendance status (present/absent), and total attendance percentage for the selected period.</textarea>
-            </div>
-
             <button type="button" class="save-button" id="homeButton" data-url="{% url 'homepage' %}">Go to Homepage</button>
             <button type="button" class="save-button" id="activityButton" data-url="{% url 'activity' %}">Generate to Activity</button>
-            
         </form>
     </div>
 
     <script>
         document.getElementById('homeButton').addEventListener('click', function() {
-        var url = this.getAttribute('data-url');  // Ambil URL dari data-url
-        window.location.href = url;  // Arahkan pengguna ke URL
-    });
+            var url = this.getAttribute('data-url');
+            window.location.href = url;
+        });
 
-    document.getElementById('activityButton').addEventListener('click', function() {
-        var url = this.getAttribute('data-url');  // Ambil URL dari data-url
-        window.location.href = url;  // Arahkan pengguna ke URL
-    });
-
+        document.getElementById('activityButton').addEventListener('click', function() {
+            var url = this.getAttribute('data-url');
+            window.location.href = url;
+        });
     </script>
 </body>
 </html>
