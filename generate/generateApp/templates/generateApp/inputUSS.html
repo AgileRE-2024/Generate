@@ -11,11 +11,12 @@
 <body>
     <header class="main-header">
         <div class="logo">
+            <a href="{% url 'homepage' %}">
             <img src="logoo.png" alt="Generate Logo" class="logo-image"> <!-- Ganti "logo.png" dengan URL logo Anda -->
         </div>
         
         <nav class="nav-links">
-            <a href="#">Home</a>
+            <a href="{% url 'homepage' %}">Home</a>
             <div class="nav">
                 <a href="#">About <i class="ri-arrow-down-s-line"></i></a>
                 <a href="#">Pages <i class="ri-arrow-down-s-line"></i></a>
@@ -31,8 +32,8 @@
     </header>
 
     <div class="container">
-        <div class="back">
-            <i class="ri-arrow-left-line"></i>
+        <div class="back"><a href="{% url 'homepage' %}">
+            <i class="ri-arrow-left-line"></i></a>
         </div>
 
         <div>

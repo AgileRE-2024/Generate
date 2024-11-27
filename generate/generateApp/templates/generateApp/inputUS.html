@@ -11,6 +11,7 @@
 <body>
     <header class="main-header">
         <div class="logo">
+            <a href="{% url 'homepage' %}">
             <img src="{% static 'images/logoo.png' %}" alt="Generate Logo" class="logo-image">
         </div>
         <nav class="nav-links">
@@ -28,8 +29,8 @@
     </header>
 
     <div class="container">
-        <div class="back">
-            <i class="ri-arrow-left-line"></i>
+        <div class="back"><a href="{% url 'homepage' %}">
+            <i class="ri-arrow-left-line"></i></a>
         </div>
         <div>
             <h1>Input <span><br>User Story</br></span></h1>
