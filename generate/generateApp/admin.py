@@ -1,7 +1,6 @@
 from django.contrib import admin
 from .models import (
     User, Project, GUI, UserStory, UserStoryScenario,
-    Given, When, Then, And,
     ActivityDiagram, ClassDiagram, SequenceDiagram
 )
 
@@ -34,56 +33,11 @@ class UserStoryAdmin(admin.ModelAdmin):
     search_fields = ('input_who', 'input_what', 'input_why')
 
 
-# Inline untuk membantu menampilkan data yang saling terkait
-class UserStoryScenarioInline(admin.TabularInline):
-    model = UserStoryScenario
-    extra = 1
-
-
-class GivenInline(admin.TabularInline):
-    model = Given
-    extra = 1
-
-
-class WhenInline(admin.TabularInline):
-    model = When
-    extra = 1
-
-
-class ThenInline(admin.TabularInline):
-    model = Then
-    extra = 1
-
-
-class AndInline(admin.TabularInline):
-    model = And
-    extra = 1
-
-
-
+# Admin untuk UserStoryScenario
 @admin.register(UserStoryScenario)
 class UserStoryScenarioAdmin(admin.ModelAdmin):
-    list_display = ('id', 'fitur_user_story_scenario', 'user_story')
-
-
-@admin.register(Given)
-class GivenAdmin(admin.ModelAdmin):
-    list_display = ('id', 'description', 'user_story')
-
-
-@admin.register(When)
-class WhenAdmin(admin.ModelAdmin):
-    list_display = ('id', 'description', 'user_story', 'given')
-
-
-@admin.register(Then)
-class ThenAdmin(admin.ModelAdmin):
-    list_display = ('id', 'description', 'user_story', 'when')
-
-
-@admin.register(And)
-class AndAdmin(admin.ModelAdmin):
-    list_display = ('id', 'description', 'user_story', 'then')
+    list_display = ('id_user_story_scenario', 'scenario_name', 'given', 'when', 'then')  # Gunakan 'id_user_story_scenario'
+    search_fields = ('scenario_name', 'given', 'when', 'then')  # Menambahkan fitur pencarian
 
 
 # Admin untuk ActivityDiagram

@@ -1,6 +1,8 @@
+resultUSS.html
+
 <!DOCTYPE html>
 <html lang="en">
-{% load static %}
+    {% load static %}
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,15 +13,20 @@
 <body>
     <header class="main-header">
         <div class="logo">
-            <img src="logoo.png" alt="Generate Logo" class="logo-image">
+            <img src="logoo.png" alt="Generate Logo" class="logo-image"> <!-- Ganti "logo.png" dengan URL logo Anda -->
         </div>
+        
         <nav class="nav-links">
             <a href="#">Home</a>
-            <a href="#">About</a>
-            <a href="#">Pages</a>
-            <a href="#">Blog</a>
+            <div class="nav">
+                <a href="#">About <i class="ri-arrow-down-s-line"></i></a>
+                <a href="#">Pages <i class="ri-arrow-down-s-line"></i></a>
+                <a href="#">Blog <i class="ri-arrow-down-s-line"></i></a>
+            </div>
             <a href="#">My Projects</a>
         </nav>
+        
+        
         <div class="profile-icon">
             <i class="ri-account-circle-line"></i>
         </div>
@@ -31,55 +38,58 @@
         </div>
 
         <div>
-            <h1>Result <span>User Story Scenario</span></h1>
+            <h1>Result <span> <br>
+                User Story Scenario</br></span></h1>
+        </div>
+        
+        <div class="text">
+            Skenario: Viewing Attendance History Based on Courses and Time Periods (Success)
         </div>
 
-        {% if scenarios %}
-            {% for scenario in scenarios %}
-            <div class="text">
-                <h2>{{ scenario.fitur_user_story_scenario }}</h2>
-                <ul>
-                    {% for given in scenario.givens.all %}
-                    <li><strong>Given:</strong> {{ given.description }}</li>
-                    <ul>
-                        {% for when in given.whens.all %}
-                        <li><strong>When:</strong> {{ when.description }}</li>
-                        <ul>
-                            {% for then in when.thens.all %}
-                            <li><strong>Then:</strong> {{ then.description }}</li>
-                            <ul>
-                                {% for and_instance in then.ands.all %}
-                                <li><strong>And:</strong> {{ and_instance.description }}</li>
-                                {% endfor %}
-                            </ul>
-                            {% endfor %}
-                        </ul>
+        <form class="scenario-form" method="post">
+            <div class="container mt-5">
+                {% if user_story_scenarios %}
+                    <ul class="list-group text-center">
+                        {% for scenario in user_story_scenarios %}
+                            <li class="list-group-item mb-3 shadow-sm">
+                                <div class="col-md-12">
+                                    <h5>{{ scenario.scenario_name }}</h5>
+                                    <p>
+                                        <strong>Given:</strong> <em>{{ scenario.given }}</em><br>
+                                        <strong>When:</strong> <em>{{ scenario.when }}</em><br>
+                                        <strong>Then:</strong> <em>{{ scenario.then }}</em>
+                                    </p>
+                                </div>
+                            </li>
                         {% endfor %}
                     </ul>
-                    {% endfor %}
-                </ul>
+                {% else %}
+                    <div class="alert alert-warning text-center" role="alert">
+                        No user story scenarios found.
+                    </div>
+                {% endif %}
             </div>
-            {% endfor %}
-        {% else %}
-            <p>No scenarios found.</p>
-        {% endif %}
-
-        <form class="user-story-form">
-            <button type="button" class="save-button" id="homeButton" data-url="{% url 'homepage' %}">Go to Homepage</button>
-            <button type="button" class="save-button" id="activityButton" data-url="{% url 'activity' %}">Generate to Activity</button>
+                
+                    <!-- Tombol menuju daftar proyek -->
+                    <button type="button" class="save-button" id="homeButton" data-url="{% url 'homepage' %}">Go to Homepage</button>
+                    
+                    <!-- Tombol menuju scenario -->
+                    <button type="button" class="save-button" id="activityButton" data-url="{% url 'activity' %}">Generate to Activity</button>
         </form>
+        
     </div>
 
     <script>
         document.getElementById('homeButton').addEventListener('click', function() {
-            var url = this.getAttribute('data-url');
-            window.location.href = url;
-        });
+        var url = this.getAttribute('data-url');  // Ambil URL dari data-url
+        window.location.href = url;  // Arahkan pengguna ke URL
+    });
 
-        document.getElementById('activityButton').addEventListener('click', function() {
-            var url = this.getAttribute('data-url');
-            window.location.href = url;
-        });
+    document.getElementById('activityButton').addEventListener('click', function() {
+        var url = this.getAttribute('data-url');  // Ambil URL dari data-url
+        window.location.href = url;  // Arahkan pengguna ke URL
+    });
+
     </script>
 </body>
 </html>

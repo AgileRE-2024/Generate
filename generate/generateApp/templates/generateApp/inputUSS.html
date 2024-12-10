@@ -1,3 +1,5 @@
+inputUSS.html
+
 <!DOCTYPE html>
 <html lang="en">
     {% load static %}
@@ -11,12 +13,11 @@
 <body>
     <header class="main-header">
         <div class="logo">
-            <a href="{% url 'homepage' %}">
-            <img src="{% static 'images/logoo.png' %}" alt="Generate Logo" class="logo-image"> <!-- Ganti "logo.png" dengan URL logo Anda -->
+            <img src="logoo.png" alt="Generate Logo" class="logo-image"> <!-- Ganti "logo.png" dengan URL logo Anda -->
         </div>
         
         <nav class="nav-links">
-            <a href="{% url 'homepage' %}">Home</a>
+            <a href="#">Home</a>
             <div class="nav">
                 <a href="#">About <i class="ri-arrow-down-s-line"></i></a>
                 <a href="#">Pages <i class="ri-arrow-down-s-line"></i></a>
@@ -32,125 +33,20 @@
     </header>
 
     <div class="container">
-        <div class="back"><a href="{% url 'homepage' %}">
-            <i class="ri-arrow-left-line"></i></a>
+        <div class="back">
+            <i class="ri-arrow-left-line"></i>
         </div>
-
         <div>
-            <h1>Input <span> <br>
-                User Story Scenario</br></span></h1>
+            <h1>Input <span>User Story Scenario</span></h1>
         </div>
-        
-        <div class="scenario">
-            <span>Scenario:</span>
-            <input type="text" value="Viewing Attendance History Based on Courses and Time Periods (Success)" readonly>
-        </div>
-
-        <div class="icard">
-                <div class="icon">
-                    <button class="plus"><i class="ri-add-circle-fill"></i></i></button>
-                </div>
-                <div class="card">
-                    <div class="section-title">Given:
-                        <div class="icons">
-                            <div class="icon">
-                                <button class="plus"><i class="ri-add-circle-fill"></i></i></button>
-                            </div>
-                            <button class="delete"><i class="ri-delete-bin-7-fill"></i></i></button>
-                        </div>
-                    </div>
-                    <div class="section-content">
-                        <input type="text" id="what" class="text-input" placeholder="Type Attribute">
-                        <div class="icons">
-                            <button class="edit"><i class="ri-pencil-fill"></i></i></button>
-                            <div class="icon">
-                                <button class="plus"><i class="ri-add-circle-fill"></i></i></button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-        </div>
-
-        <div class="icard">
-            <div class="icon">
-                <button class="plus"><i class="ri-add-circle-fill"></i></i></button>
-            </div>
-            <div class="card">
-                <div class="section-title">When:
-                    <div class="icons">
-                        <button class="delete"><i class="ri-delete-bin-7-fill"></i></i></button>
-                    </div>
-                </div>
-                <div class="section-content">
-                    <input type="text" id="what" class="text-input" placeholder="Type Attribute">
-                    <div class="icons">
-                        <button class="edit"><i class="ri-pencil-fill"></i></i></button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="icard">
-            <div class="icon">
-                <button class="plus"><i class="ri-add-circle-fill"></i></i></button>
-            </div>
-            <div class="card">
-                <div class="section-title">Then:
-                    <div class="icons">
-                        <button class="delete"><i class="ri-delete-bin-7-fill"></i></i></button>
-                    </div>
-                </div>
-                <div class="section-content">
-                    <input type="text" id="what" class="text-input" placeholder="Type Attribute">
-                    <div class="icons">
-                        <button class="edit"><i class="ri-pencil-fill"></i></i></button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="icard">
-            <div class="icon">
-                <button class="plus"><i class="ri-add-circle-fill"></i></i></button>
-            </div>
-            <div class="card">
-                <div class="section-title">When:
-                    <div class="icons">
-                        <button class="delete"><i class="ri-delete-bin-7-fill"></i></i></button>
-                    </div>
-                </div>
-                <div class="section-content">
-                    <input type="text" id="what" class="text-input" placeholder="Type Attribute">
-                    {% csrf_token %}
-                    {{ form.as_p }}
-                    <div class="icons">
-                        <button class="edit"><i class="ri-pencil-fill"></i></i></button>
-                    </div>
-                </div>
-            </div>    
-        </div>
-
-        <div class="icard">
-            <div class="icon">
-                <button class="plus"><i class="ri-add-circle-fill"></i></i></button>
-            </div>
-            <div class="card">  
-                <div class="section-title">Then:
-                    <div class="icons">
-                        <button class="delete"><i class="ri-delete-bin-7-fill"></i></i></button>
-                    </div>
-                </div>
-                <div class="section-content">
-                    <input type="text" id="what" class="text-input" placeholder="Type Attribute">
-                    <div class="icons">
-                        <button class="edit"><i class="ri-pencil-fill"></i></i></button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <button type="button" class="save-button" id="goToResultUSS" data-url="{% url 'resultUSS' %}">Generate to Scenario</button>
-        <button type="button" class="save-button" id="save" data-url="">Save</button>
+    
+        <form class="user-story-scenario-form" method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="save-button">Save</button>
+        </form>
     </div>
+    
 
     <script src="{% static 'inputUSS.js'}"></script>
     <script>

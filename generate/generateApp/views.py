@@ -56,12 +56,34 @@ def gui(request):
     return render(request, "generateApp/gui.html", context)
 
 def inputUSS(request):
-    context = {}
-    return render(request, "generateApp/inputUSS.html", context)
+    """
+    View untuk memasukkan User Story Scenario baru.
+    Setelah menyimpan, redirect ke resultUSS dengan ID User Story Scenario yang baru disimpan.
+    """
+    if request.method == 'POST':
+        form = UserStoryScenarioForm(request.POST)
+        if form.is_valid():
+            user_story_scenario = form.save()  # Simpan data dan dapatkan instance
+            return redirect('resultUSS', scenario_id=user_story_scenario.id_user_story_scenario)  # Redirect dengan parameter
+    else:
+        form = UserStoryScenarioForm()
+    
+    return render(request, 'generateApp/inputUSS.html', {'form': form})
 
-def resultUSS(request):
-    context = {}
-    return render(request, "generateApp/resultUSS.html", context)
+def resultUSS(request, scenario_id=None):
+    """
+    View untuk menampilkan User Story Scenario.
+    Jika ID diberikan, hanya menampilkan User Story Scenario dengan ID tersebut.
+    """
+    if scenario_id:
+        user_story_scenario = get_object_or_404(UserStoryScenario, id_user_story_scenario=scenario_id)
+        user_story_scenarios = [user_story_scenario]  # Menampilkan satu data
+    else:
+        user_story_scenarios = UserStoryScenario.objects.all()  # Semua data jika ID tidak diberikan
+    
+    return render(request, 'generateApp/resultUSS.html', {'user_story_scenarios': user_story_scenarios})
+
+
 
 def activity(request):
     context = {}

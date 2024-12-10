@@ -44,53 +44,15 @@ class UserStory(models.Model):
         return f"User Story ID: {self.id_user_story}"
 
 
-# User Story Scenario
 class UserStoryScenario(models.Model):
-    user_story = models.ForeignKey(UserStory, related_name='scenarios', on_delete=models.CASCADE)
-    fitur_user_story_scenario = models.CharField(max_length=255)
+    id_user_story_scenario = models.AutoField(primary_key=True)
+    scenario_name = models.TextField(null=True)
+    given = models.TextField(null=True)
+    when = models.TextField(null=True)
+    then = models.TextField(null=True)
 
     def __str__(self):
-        return self.fitur_user_story_scenario
-
-
-# Given
-class Given(models.Model):
-    user_story = models.ForeignKey(UserStory, related_name='givens', on_delete=models.CASCADE)
-    description = models.TextField()
-
-    def __str__(self):
-        return f"Given: {self.description[:50]}"
-
-
-# When
-class When(models.Model):
-    user_story = models.ForeignKey(UserStory, related_name='whens', on_delete=models.CASCADE)
-    given = models.ForeignKey(Given, related_name='whens', on_delete=models.CASCADE)
-    description = models.TextField()
-
-    def __str__(self):
-        return f"When: {self.description[:50]}"
-
-
-# Then
-class Then(models.Model):
-    user_story = models.ForeignKey(UserStory, related_name='thens', on_delete=models.CASCADE)
-    when = models.ForeignKey(When, related_name='thens', on_delete=models.CASCADE)
-    description = models.TextField()
-
-    def __str__(self):
-        return f"Then: {self.description[:50]}"
-
-
-# And
-class And(models.Model):
-    user_story = models.ForeignKey(UserStory, related_name='ands', on_delete=models.CASCADE)
-    then = models.ForeignKey(Then, related_name='ands', on_delete=models.CASCADE)
-    description = models.TextField()
-
-    def __str__(self):
-        return f"And: {self.description[:50]}"
-
+        return f"User Story Scenario ID: {self.id_user_story_scenario}"
 
 
 class ActivityDiagram(models.Model):
