@@ -12,8 +12,10 @@
         <header>
             <a href="#" class="back-button">←</a>
             <h1><span class="orange-text">Generate</span> it to<br>Your Own</h1>
+            <p>Project Name: {{ project.nama_project }}</p>
+            <p>Description: {{ project.deskripsi_project }}</p>
         </header>
-        
+
         <main class="content">
             <a href="{% url 'homepage' %}" class="card-container">
                 <div class="card">
@@ -24,7 +26,7 @@
                 </div>
             </a>
 
-            <a href="{% url 'homepage' %}" class="card-container">
+            <a href="{% url 'inputUS' project.id_project %}" class="card-container">
                 <div class="card">
                     <div class="image-placeholder">
                         <img src="{% static 'images/userstory.png' %}" alt="User Story">

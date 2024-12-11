@@ -1,6 +1,8 @@
 from django import forms
 from .models import UserStory
 from .models import UserStoryScenario
+from django.contrib.auth.forms import UserCreationForm
+from .models import *
 
 class UserStoryForm(forms.ModelForm):
     class Meta:
@@ -33,3 +35,31 @@ class UserStoryScenarioForm(forms.ModelForm):
             'when': forms.Textarea(attrs={'placeholder': 'Describe the triggering event'}),
             'then': forms.Textarea(attrs={'placeholder': 'Describe the expected outcome'}),
         }
+class ProjectForm(forms.ModelForm):
+    class Meta:
+        model = Project
+        fields = ['nama_project', 'deskripsi_project']  # Sesuaikan dengan nama field di model Project
+        widgets = {
+            'nama_project': forms.TextInput(attrs={'placeholder': 'Type a project name'}),
+            'deskripsi_project': forms.Textarea(attrs={'placeholder': 'Type a description of project'}),
+        }
+
+class RegisterForm(UserCreationForm):  # Extend from UserCreationForm
+    no_telp = forms.CharField(max_length=15, required=False, label="Phone Number")
+
+    class Meta:
+        model = User
+        fields = ['username', 'email', 'no_telp', 'password1', 'password2']
+        labels = {
+            'username': 'Username',
+            'email': 'Email',
+        }
+
+    def save(self, commit=True):
+        user = super().save(commit=False)
+        user.email = self.cleaned_data['email']
+        if commit:
+            user.save()
+            # Save the additional profile data
+            UserProfile.objects.create(user=user, no_telp=self.cleaned_data['no_telp'])
+        return user

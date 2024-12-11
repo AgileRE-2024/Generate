@@ -17,17 +17,12 @@
     <div class="right-section">
         <div class="login-form">
             <h2>Login</h2>
-            <form action="{% url 'homepage' %}" method="POST">
+            <form method="post">
                 {% csrf_token %}
-                <input type="email" name="email" placeholder="Email Address" required>
-
-                <div class="password-container">
-                    <input type="password" name="password" id="password" placeholder="Enter password" required>
-                    <span class="password-toggle" onclick="togglePasswordVisibility()">
-                        <img src="{% static 'images/eye.png' %}" alt="Show" id="toggleIcon" class="toggle-icon">
-                    </span>
-                </div>
-
+                <label for="username">Username:</label>
+                <input type="text" name="username" id="username" required>
+                <label for="password">Password:</label>
+                <input type="password" name="password" id="password" required>
                 <button type="submit">Login</button>
             </form>
             <div class="register">

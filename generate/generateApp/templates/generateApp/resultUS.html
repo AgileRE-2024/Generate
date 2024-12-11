@@ -33,23 +33,21 @@
             <i class="ri-arrow-left-line"></i>
         </div>
         <div>
-            <h1>Result <span><br>User Story</br></span></h1>
+            <h1>Result <span><br>User Story</span></h1>
         </div>
 
         <form class="user-story-form">
             <div class="container mt-5">
         
-                {% if user_stories %}
+                {% if user_story %}
                     <ul class="list-group text-center">
-                        {% for story in user_stories %}
                             <li class="list-group-item mb-3 shadow-sm">
                                 <div class="col-md-12">
                                     <p>
-                                        As a <em>{{ story.input_who }}</em>, I want to <em>{{ story.input_what }}</em> so that I can <em>{{ story.input_why }}</em>.
+                                        As a <em>{{ user_story.input_who }}</em>, I want to <em>{{ user_story.input_what }}</em> so that I can <em>{{ user_story.input_why }}</em>.
                                     </p>
                                 </div>
                             </li>
-                        {% endfor %}
                     </ul>
                 {% else %}
                     <div class="alert alert-warning text-center" role="alert">
@@ -59,15 +57,19 @@
             </div>
         
             <!-- Tombol menuju daftar proyek -->
-            <button type="button" class="save-button" id="goToProjectList" data-url="{% url 'homepage' %}">Go to Project List</button>
+            <a href="{% url 'homepage' %}" class="save-button text-decoration-none">
+                Go to Project List
+            </a>
             
             <!-- Tombol menuju scenario -->
 
-            <a type="button" class="save-button text-decoration-none" id="generateToScenario" href="{% url 'inputUSS' %}">
+            <a href="{% url 'inputUSS' user_story.id_user_story %}" class="save-button text-decoration-none">
                 Generate to Scenario
             </a>
             <!-- Tombol menuju sequence -->
-            <button type="button" class="save-button" id="generateToSequence" data-url="{% url 'sequence' %}">Generate to Sequence</button>
+            <a href="{% url 'sequence' user_story.id_user_story %}" class="save-button text-decoration-none">
+                Generate to Sequence
+            </a>
         </form>
     </div>
 

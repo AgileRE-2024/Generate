@@ -1,14 +1,12 @@
 from django.db import models
+from django.contrib.auth.models import User
 
-class User(models.Model):
-    id_user = models.AutoField(primary_key=True)
-    nama_user = models.CharField(max_length=100)
-    email_user = models.EmailField(unique=True)
-    telp_user = models.CharField(max_length=15, blank=True, null=True)
-    password_user = models.CharField(max_length=255)
+class UserProfile(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    no_telp = models.CharField(max_length=15, null=True, blank=True)
 
     def __str__(self):
-        return self.nama_user
+        return self.user.username
 
 
 class Project(models.Model):
@@ -39,6 +37,7 @@ class UserStory(models.Model):
     input_who = models.TextField()
     input_what = models.TextField()
     input_why = models.TextField()
+    project = models.ForeignKey(Project, on_delete=models.CASCADE, related_name='user_stories')
 
     def __str__(self):
         return f"User Story ID: {self.id_user_story}"
@@ -81,9 +80,9 @@ class SequenceDiagram(models.Model):
     input_controller = models.TextField()
     input_entity = models.TextField()
     hasil_sequence = models.TextField()
-    class_diagram = models.OneToOneField(ClassDiagram, on_delete=models.CASCADE, related_name='sequence')
+    user_story = models.ForeignKey(UserStory, on_delete=models.CASCADE, related_name='sequences')
 
     def __str__(self):
-        return f"Sequence Diagram for {self.class_diagram.pilihan_GUI}"
+        return f"Sequence Diagram for User Story {self.user_story.id_user_story}"
 
 

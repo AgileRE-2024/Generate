@@ -25,8 +25,18 @@
             <a href="#">My Projects</a>
         </nav>
         
-        <div class="profile-icon">
-            <img src="{% static 'images/account_circle.jpg' %}" alt="Profile Icon" class="logo-image"> 
+        <div class="profile-container">
+            {% comment %} <div class="profile-icon">
+                <img src="{% static 'images/account_circle.jpg' %}" alt="Profile Icon" class="logo-image">
+            </div> {% endcomment %}
+            <div class="profile-info">
+                {% if user.is_authenticated %}
+                    <h3>Hello, {{ user.username }}</h3>
+                    <a href="{% url 'logout' %}" class="logout-btn">Logout</a>
+                {% else %}
+                    <p><a href="{% url 'login' %}">Login</a></p>
+                {% endif %}
+            </div>
         </div>
     </header>
 
@@ -61,72 +71,47 @@
                     </tr>
                 </thead>
                 <tbody id="project-table-body">
-                    <!-- Example rows -->
-    
-                    <tr>
-                        <td>1</td>
-                        <td>Example Project</td>
-                        <td>August 3, 2024 13:34 a.m</td>
-                        <td>September 1, 2024 06:30 p.m</td>
-                        <td><button class="edit-btn"><img src="{% static 'images/Layout.png' %}" alt="Edit" style="width: 40px; height: 40px;"></button></td>
-                        <td><button class="edit-btn"><img src="{% static 'images/Edit.png' %}" alt="Edit" style="width: 40px; height: 40px;"></button> <button class="delete-btn"><img src="{% static 'images/Trash.png' %}" alt="Trash" style="width: 40px; height: 40px;"></button></td>
-                        <td class="dropdown">
-                            <button class="history-btn">
-                                <img src="{% static 'images/Back copy.png' %}" alt="Back" style="width: 40px; height: 40px;">
-                            </button>
-                            <div class="dropdown-content">
-                                <a href="{% url 'inputUS' %}"><span class="done-icon">✔️</span>User Story</a>
-                                <a href="{% url 'inputUSS' %}"><span class="done-icon">✔️</span>User Story Scenario</a>
-                                <a href="{% url 'activity' %}">Activity Diagram</a>
-                                <a href="{% url 'sequence' %}">Sequence Diagram</a>
-                                <a href="{% url 'classDiag' %}">Class Diagram</a>
-                                <a href="{% url 'gui' %}">GUI</a>
-                            </div>
-                        </td>
-                        
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>Example Project</td>
-                        <td>August 3, 2024 13:34 a.m</td>
-                        <td>September 1, 2024 06:30 p.m</td>
-                        <td><button class="edit-btn"><img src="{% static 'images/Layout.png' %}" alt="Edit" style="width: 40px; height: 40px;"></button></td>
-                        <td><button class="edit-btn"><img src="{% static 'images/Edit.png' %}" alt="Edit" style="width: 40px; height: 40px;"></button> <button class="delete-btn"><img src="{% static 'images/Trash.png' %}" alt="Trash" style="width: 40px; height: 40px;"></button></td>
-                        <td class="dropdown">
-                            <button class="history-btn">
-                                <img src="{% static 'images/Back copy.png' %}" alt="Back" style="width: 40px; height: 40px;">
-                            </button>
-                            <div class="dropdown-content">
-                                <a href="{% url 'inputUS' %}"><span class="done-icon">✔️</span>User Story</a>
-                                <a href="{% url 'inputUSS' %}"><span class="done-icon">✔️</span>User Story Scenario</a>
-                                <a href="{% url 'activity' %}">Activity Diagram</a>
-                                <a href="{% url 'sequence' %}">Sequence Diagram</a>
-                                <a href="{% url 'classDiag' %}">Class Diagram</a>
-                                <a href="{% url 'gui' %}">GUI</a>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td>Example Project</td>
-                        <td>August 3, 2024 13:34 a.m</td>
-                        <td>September 1, 2024 06:30 p.m</td>
-                        <td><button class="edit-btn"><img src="{% static 'images/Layout.png' %}" alt="Edit" style="width: 40px; height: 40px;"></button></td>
-                        <td><button class="edit-btn"><img src="{% static 'images/Edit.png' %}" alt="Edit" style="width: 40px; height: 40px;"></button> <button class="delete-btn"><img src="{% static 'images/Trash.png' %}" alt="Trash" style="width: 40px; height: 40px;"></button></td>
-                        <td class="dropdown">
-                            <button class="history-btn">
-                                <img src="{% static 'images/Back copy.png' %}" alt="Back" style="width: 40px; height: 40px;">
-                            </button>
-                            <div class="dropdown-content">
-                                <a href="{% url 'inputUS' %}"><span class="done-icon">✔️</span>User Story</a>
-                                <a href="{% url 'inputUSS' %}"><span class="done-icon">✔️</span>User Story Scenario</a>
-                                <a href="{% url 'activity' %}">Activity Diagram</a>
-                                <a href="{% url 'sequence' %}">Sequence Diagram</a>
-                                <a href="{% url 'classDiag' %}">Class Diagram</a>
-                                <a href="{% url 'gui' %}">GUI</a>
-                            </div>
-                        </td>
-                    </tr>
+                    <!-- Loop through projects -->
+                    {% for project in projects %}
+                        <tr>
+                            <td>{{ forloop.counter }}</td>
+                            <td><a href="{% url 'project_detail' project.id_project %}" style="text-decoration: none; color: black;">{{ project.nama_project }}</a></td>
+                            <td>{{ project.tanggal_project_dibuat|date:"F j, Y H:i a" }}</td>
+                            <td>{{ project.tanggal_akses_terakhir_project|date:"F j, Y H:i p" }}</td>
+                            <td><button class="edit-btn"><img src="{% static 'images/Layout.png' %}" alt="Edit" style="width: 40px; height: 40px;"></button></td>
+                            <td>
+                                <div class="action-buttons">
+                                    <a href="{% url 'project_detail' project.id_project %}" style="text-decoration: none; color: black;" class="edit-btn">
+                                        <img src="{% static 'images/Edit.png' %}" alt="Edit" style="width: 40px; height: 40px;">
+                                    </a>
+                                    <form method="post" action="{% url 'delete_project' project.id_project %}">
+                                        {% csrf_token %}
+                                        <button type="submit" class="delete-btn">
+                                            <img src="{% static 'images/Trash.png' %}" alt="Trash" style="width: 40px; height: 40px;">
+                                        </button>
+                                    </form>
+                                </div>
+                            </td>
+                            
+                            <td class="dropdown">
+                                <button class="history-btn">
+                                    <img src="{% static 'images/Back copy.png' %}" alt="Back" style="width: 40px; height: 40px;">
+                                </button>
+                                <div class="dropdown-content">
+                                    <a href="#"><span class="done-icon">✔️</span>User Story</a>
+                                    <a href="#"><span class="done-icon">✔️</span>User Story Scenario</a>
+                                    <a href="#">Activity Diagram</a>
+                                    <a href="#">Sequence Diagram</a>
+                                    <a href="#">Class Diagram</a>
+                                    <a href="#">GUI</a>
+                                </div>
+                            </td>
+                        </tr>
+                    {% empty %}
+                        <tr>
+                            <td colspan="7">No projects found.</td>
+                        </tr>
+                    {% endfor %}
                 </tbody>                
             </table>
             
@@ -136,76 +121,23 @@
     <script src="{% static 'js/class.js' %}"></script>
     <script>
         document.addEventListener("DOMContentLoaded", function () {
-            const projectTableBody = document.getElementById("project-table-body");
-        
-            // Ambil data project dari localStorage
-            const projects = JSON.parse(localStorage.getItem("projects")) || [];
-        
-            // Generate baris tabel
-            projects.forEach((project, index) => {
-                const row = document.createElement("tr");
-                row.innerHTML = `
-                    <td>${index + 1}</td>
-                    <td>${project.name}</td>
-                    <td>${project.createdAt}</td>
-                    <td>${project.updatedAt}</td>
-                    <td>
-                        <button class="edit-btn">
-                            <img src="{% static 'images/Layout.png' %}" alt="Edit" style="width: 40px; height: 40px;">
-                        </button>
-                    </td>
-                    <td>
-                        <button class="edit-btn" data-index="${index}">
-                            <img src="{% static 'images/Edit.png' %}" alt="Edit" style="width: 40px; height: 40px;">
-                        </button>
-                        <button class="delete-btn" data-index="${index}">
-                            <img src="{% static 'images/Trash.png' %}" alt="Trash" style="width: 40px; height: 40px;">
-                        </button>
-                    </td>
-                    <td class="dropdown">
-                        <button class="history-btn">
-                            <img src="{% static 'images/Back copy.png' %}" alt="Back" style="width: 40px; height: 40px;">
-                        </button>
-                        <div class="dropdown-content">
-                            <a href="{% url 'inputUS' %}"><span class="done-icon">✔️</span>User Story</a>
-                            <a href="{% url 'inputUSS' %}"><span class="done-icon">✔️</span>User Story Scenario</a>
-                            <a href="{% url 'activity' %}">Activity Diagram</a>
-                            <a href="{% url 'sequence' %}">Sequence Diagram</a>
-                            <a href="{% url 'classDiag' %}">Class Diagram</a>
-                            <a href="{% url 'gui' %}">GUI</a>
-                        </div>
-                    </td>
-                `;
-                projectTableBody.appendChild(row);
-            });
-        
-            // Tambahkan event listener untuk tombol Edit
-            document.querySelectorAll(".edit-btn").forEach(button => {
-                button.addEventListener("click", function () {
-                    const index = this.dataset.index;
-                    const newName = prompt("Edit project name:", projects[index].name);
-                    if (newName) {
-                        projects[index].name = newName;
-                        projects[index].updatedAt = new Date().toLocaleString();
-                        localStorage.setItem("projects", JSON.stringify(projects));
-                        location.reload(); // Refresh tabel
-                    }
-                });
-            });
-        
-            // Tambahkan event listener untuk tombol Delete
+         
             document.querySelectorAll(".delete-btn").forEach(button => {
-                button.addEventListener("click", function () {
-                    const index = this.dataset.index;
-                    if (confirm("Are you sure you want to delete this project?")) {
-                        projects.splice(index, 1);
-                        localStorage.setItem("projects", JSON.stringify(projects));
-                        location.reload(); // Refresh tabel
+                button.addEventListener("click", function (event) {
+                    event.preventDefault(); 
+                    
+                    const isConfirmed = confirm("Are you sure you want to delete this project?");
+                    
+                    if (isConfirmed) {
+                       
+                        const form = this.closest("form");
+                        form.submit(); 
                     }
                 });
             });
         });
-        </script>
+        
+    </script>
         
 </body>
 </html>

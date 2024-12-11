@@ -69,11 +69,37 @@ body {
     color: #F1BD7F;
 }
 
-.profile-icon {
-    width: 80px;
-    height: 80px; 
-    transform: scale(0.5);
+.profile-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
 }
+
+.profile-info {
+    display: flex;
+    align-items: center;
+}
+
+.profile-info h3 {
+    margin: 0;
+    font-size: 18px;
+}
+
+.logout-btn {
+    margin-left: 10px; /* Jarak antara nama pengguna dan tombol logout */
+    padding: 5px 10px;
+    background-color: #ff5733; /* Warna latar belakang tombol */
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.logout-btn:hover {
+    background-color: #e74c3c; /* Warna latar belakang saat hover */
+}
+
+
 
 .intro-section {
     text-align: center;
@@ -154,7 +180,6 @@ table {
 thead {
     background-color: #f3f3f3;
 }
-
 th, td {
     padding: 15px;
     text-align: left;
@@ -174,6 +199,13 @@ th, td {
 
 .delete-btn {
     color: #F44336;
+}
+
+/* Flexbox untuk membuat tombol sejajar */
+.action-buttons {
+    display: flex;
+    gap: 10px; /* Memberikan jarak antara tombol */
+    align-items: center; /* Memastikan tombol sejajar secara vertikal */
 }
 
 .dropdown {
