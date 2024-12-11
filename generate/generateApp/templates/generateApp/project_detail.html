@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ project.nama_project }} - Detail</title>
+    <!-- Link ke Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .project-header {
+            background-color: #343a40;
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+        }
+        .project-header h1 {
+            font-size: 2.5rem;
+        }
+        .section-title {
+            margin-top: 30px;
+            font-size: 1.75rem;
+            font-weight: bold;
+        }
+        .user-story-list li {
+            background-color: #ffffff;
+            margin-bottom: 10px;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container mt-5">
+        <header class="project-header text-center">
+            <h1>{{ project.nama_project }}</h1>
+            <p class="lead">Created on: {{ project.tanggal_project_dibuat|date:"F j, Y" }}</p>
+            <p>Last updated: {{ project.tanggal_akses_terakhir_project|date:"F j, Y" }}</p>
+        </header>
+
+        <section class="mt-5">
+            <h2 class="section-title">User Stories</h2>
+            <ul class="user-story-list list-unstyled">
+                {% for user_story in user_stories %}
+                    <li class="d-flex justify-content-between align-items-center">
+                        <span>As a <em>{{ user_story.input_who }}</em>, I want to <em>{{ user_story.input_what }}</em> so that I can <em>{{ user_story.input_why }}</em>.</span>
+                        <!-- Tombol untuk mengarahkan ke resultUS -->
+                        <a href="{% url 'resultUS' user_story_id=user_story.id_user_story %}" class="btn btn-primary">
+                            See Details
+                        </a>
+                    </li>
+                {% empty %}
+                    <li>No user stories found for this project.</li>
+                {% endfor %}
+            </ul>
+        </section>
+        
+        <section class="mt-5">
+            <h2 class="section-title">Sequence Diagrams</h2>
+            <div class="sequence-diagrams-list">
+                {% for user_story in user_stories %}
+                    {% for sequence in user_story.sequences.all %}
+                        <div class="card mb-4">
+                            <div class="card-header">
+                                <h5 class="card-title">Sequence Diagram for User Story: {{ sequence.user_story.input_what }}</h5>
+                            </div>
+                            <div class="card-body">
+                                <img src="{{ sequence.hasil_sequence }}" alt="Sequence Diagram" class="img-fluid">
+                            </div>
+                        </div>
+                    {% empty %}
+                        <p>No sequence diagrams found for this project.</p>
+                    {% endfor %}
+                {% endfor %}
+
+            </div>
+        </section>
+
+        <div class="text-center mt-4">
+            <a href="{% url 'generate' project.id_project %}" class="btn btn-primary">
+                Create More
+            </a>
+        </div>
+
+        <!-- Tambahkan bagian lain yang relevan dengan proyek ini, seperti diagram, use cases, dll. -->
+
+        <footer class="mt-5 text-center">
+            <a href="{% url 'homepage' %}" class="btn btn-secondary">Back to Homepage</a>
+        </footer>
+    </div>
+
+    <!-- Link ke Bootstrap JS dan Popper.js -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+</body>
+</html>
