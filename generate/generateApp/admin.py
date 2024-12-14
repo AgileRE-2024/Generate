@@ -1,7 +1,7 @@
 from django.contrib import admin
 from .models import (
     UserProfile, Project, GUI, UserStory, UserStoryScenario,
-    ActivityDiagram, ClassDiagram, SequenceDiagram
+    ActivityDiagram, ClassDiagram, SequenceDiagram, ResultAct, ResultClass
 )
 
 # Admin untuk UserProfile
@@ -46,6 +46,19 @@ class ActivityDiagramAdmin(admin.ModelAdmin):
 class ClassDiagramAdmin(admin.ModelAdmin):
     list_display = ('id_class_diagram', 'pilihan_GUI', 'isi_class')
     search_fields = ('pilihan_GUI',)
+
+# Admin untuk ResultActivityDiagram
+@admin.register(ResultAct)
+class ResultActAdmin(admin.ModelAdmin):
+    list_display = ('id_resultA', 'namaA')
+    search_fields = ('namaA',)
+
+# Admin untuk ResultClassDiagram
+@admin.register(ResultClass)
+class ResultClassAdmin(admin.ModelAdmin):
+    list_display = ('id_resultC', 'namaC')
+    search_fields = ('namaC',)
+
 
 # Admin untuk SequenceDiagram
 @admin.register(SequenceDiagram)

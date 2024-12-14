@@ -16,7 +16,7 @@
         </div>
         
         <nav class="nav-links">
-            <a href="#">Home</a>
+            <a href="{% url 'homepage' %}">Home</a>
             <div class="nav">
                 <a href="#">About <i class="ri-arrow-down-s-line"></i></a>
                 <a href="#">Pages <i class="ri-arrow-down-s-line"></i></a>
@@ -102,8 +102,8 @@
                                     <a href="#"><span class="done-icon">✔️</span>User Story Scenario</a>
                                     <a href="#">Activity Diagram</a>
                                     <a href="#">Sequence Diagram</a>
-                                    <a href="#">Class Diagram</a>
-                                    <a href="#">GUI</a>
+                                    <a href="{% url 'classDiag' %}">Class Diagram</a>
+                                    <a href="{% url 'gui' %}">GUI</a>
                                 </div>
                             </td>
                         </tr>

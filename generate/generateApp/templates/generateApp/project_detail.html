@@ -61,6 +61,29 @@
         </section>
         
         <section class="mt-5">
+            <h2 class="section-title">User Story Scenario</h2>
+            <div class="sequence-diagrams-list">
+                {% for user_story_scenarios in user_stories %}
+                    {% for user_story in user_stories %}
+                    <li class="d-flex justify-content-between align-items-center">
+                        <p>
+                            <strong>Given:</strong> <em>{{ scenario.given }}</em><br>
+                            <strong>When:</strong> <em>{{ scenario.when }}</em><br>
+                            <strong>Then:</strong> <em>{{ scenario.then }}</em>
+                        </p>
+                        <!-- Tombol untuk mengarahkan ke resultUS -->
+                        <a href="{% url 'resultUS' user_story_id=user_story.id_user_story %}" class="btn btn-primary">
+                            See Details
+                        </a>
+                    </li>
+                {% empty %}
+                        <p>No sequence diagrams found for this project.</p>
+                    {% endfor %}
+                {% endfor %}
+            </div>
+        </section>
+
+        <section class="mt-5">
             <h2 class="section-title">Sequence Diagrams</h2>
             <div class="sequence-diagrams-list">
                 {% for user_story in user_stories %}

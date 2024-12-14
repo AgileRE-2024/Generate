@@ -49,6 +49,7 @@ class UserStoryScenario(models.Model):
     given = models.TextField(null=True)
     when = models.TextField(null=True)
     then = models.TextField(null=True)
+    user_story = models.ForeignKey(UserStory, on_delete=models.CASCADE, related_name='uss')
 
     def __str__(self):
         return f"User Story Scenario ID: {self.id_user_story_scenario}"
@@ -72,7 +73,21 @@ class ClassDiagram(models.Model):
     def __str__(self):
         return f"Class Diagram - {self.pilihan_GUI}"
 
+class ResultAct(models.Model):
+    id_resultA = models.AutoField(primary_key=True)
+    namaA = models.CharField(max_length=100)
 
+    def __str__(self):
+        return self.namaA
+
+class ResultClass(models.Model):
+    id_resultC = models.AutoField(primary_key=True)
+    namaC = models.CharField(max_length=255)
+    
+    def __str__(self):
+        return self.namaC
+    
+    
 class SequenceDiagram(models.Model):
     id_sequence_diagram = models.AutoField(primary_key=True)
     input_actor = models.TextField()

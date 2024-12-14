@@ -17,7 +17,7 @@ resultUSS.html
         </div>
         
         <nav class="nav-links">
-            <a href="#">Home</a>
+            <a href="{% url 'homepage' %}">Home</a>
             <div class="nav">
                 <a href="#">About <i class="ri-arrow-down-s-line"></i></a>
                 <a href="#">Pages <i class="ri-arrow-down-s-line"></i></a>
@@ -55,9 +55,9 @@ resultUSS.html
                                 <div class="col-md-12">
                                     <h5>{{ scenario.scenario_name }}</h5>
                                     <p>
-                                        <strong>Given:</strong> <em>{{ scenario.given }}</em><br>
-                                        <strong>When:</strong> <em>{{ scenario.when }}</em><br>
-                                        <strong>Then:</strong> <em>{{ scenario.then }}</em>
+                                        <strong>Given: </strong> <em>{{ scenario.given }}</em><br>
+                                        <strong>When: </strong> <em>{{ scenario.when }} </em><br>
+                                        <strong>Then: </strong> <em>{{ scenario.then }}</em>
                                     </p>
                                 </div>
                             </li>

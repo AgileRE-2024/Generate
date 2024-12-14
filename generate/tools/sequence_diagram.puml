@@ -1,14 +1,12 @@
 @startuml
-actor dosen
-actor mahasiswa
-boundary loginpage
-boundary dashboard
-control userController
-entity Userdata
-dosen -> userController : mengakses
-alt berhasil 
-loginpage -> Userdata : mengakses
-else tidak berhasil login
-userController -> dosen : tidak mengakses
+actor f
+boundary f
+control f
+entity f
+f -> f : f
+alt f
+f -> f : f
+else f
+f -> f : f
 end
 @enduml

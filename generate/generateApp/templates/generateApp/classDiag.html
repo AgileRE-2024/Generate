@@ -89,8 +89,9 @@
             <button class="add-class-button">+ Add Class</button>
         </div>
 
-        <button class="save-button">Save</button>
-        <button class="generate-class-button">Generate Class Diagram</button>
+        <a href="{% url 'resultClass' %}" class="generate-class-button">
+            Generate Class Diagram
+        </a>
 
         <div class="result-page" style="display: none;">
             <div class="result-container">

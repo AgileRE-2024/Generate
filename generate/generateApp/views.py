@@ -100,16 +100,21 @@ def gui(request):
     context = {}
     return render(request, "generateApp/gui.html", context)
 
-def inputUSS(request):
+def inputUSS(request, id_user_story):
     """
     View untuk memasukkan User Story Scenario baru.
     Setelah menyimpan, redirect ke resultUSS dengan ID User Story Scenario yang baru disimpan.
     """
+
+    user_story = get_object_or_404(UserStory, id_user_story=id_user_story)
+
     if request.method == 'POST':
         form = UserStoryScenarioForm(request.POST)
         if form.is_valid():
-            user_story_scenario = form.save()  # Simpan data dan dapatkan instance
-            return redirect('resultUSS', scenario_id=user_story_scenario.id_user_story_scenario)  # Redirect dengan parameter
+            user_story_scenario = form.save(commit=False)  # Jangan simpan ke database dulu
+            user_story_scenario.user_story = user_story  # Tetapkan relasi dengan UserStory
+            user_story_scenario.save()  # Simpan instance ke database
+            return redirect('resultUSS', scenario_id=user_story_scenario.id_user_story_scenario) 
     else:
         form = UserStoryScenarioForm()
     
@@ -146,6 +151,14 @@ def sequence(request, id_user_story):
 def classDiag(request):
     context = {}
     return render(request, "generateApp/classDiag.html", context)
+
+
+def resultAct(request):
+    return render(request, "generateApp/resultAct.html")
+
+def resultClass(request):
+    return render(request, "generateApp/resultClass.html")
+
 
 def create(request):
     if request.method == 'POST':

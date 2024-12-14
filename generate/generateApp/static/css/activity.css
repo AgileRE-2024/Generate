@@ -192,43 +192,4 @@ h1 {
   padding: 20px;
 }
 
-.result-header {
-  text-align: center;
-  margin-bottom: 40px;
-}
 
-.result-text {
-  color: #e67e22;
-  font-size: 24px;
-}
-
-.diagram-container {
-  max-width: 800px;
-  margin: 0 auto;
-  background: white;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-
-.diagram-container img {
-  width: 100%;
-  height: auto;
-}
-
-.back-to-list {
-  display: block;
-  margin: 40px auto;
-  background-color: #e67e22;
-  color: white;
-  border: none;
-  padding: 15px 40px;
-  border-radius: 25px;
-  cursor: pointer;
-  font-size: 16px;
-  transition: background-color 0.3s;
-}
-
-.back-to-list:hover {
-  background-color: #d35400;
-}

@@ -12,7 +12,7 @@ urlpatterns = [
     path('resultUS/<int:user_story_id>/', views.resultUS, name="resultUS"),
     path('homepage/', views.homepage, name="homepage"),
     path('gui/', views.gui, name="gui"),
-    path('inputUSS', views.inputUSS, name="inputUSS"),
+    path('inputUSS/<int:id_user_story>/', views.inputUSS, name="inputUSS"),
     path('resultUSS/<int:scenario_id>/', views.resultUSS, name='resultUSS'),
     path('activity/', views.activity, name="activity"),
     path('sequence/<int:id_user_story>/', views.sequence, name="sequence"),
@@ -22,6 +22,8 @@ urlpatterns = [
     path('delete_project/<int:id_project>/', views.delete_project, name='delete_project'),
     path('project/<int:id_project>/', views.project_detail, name='project_detail'),
     path('generate-sequence-diagram/', views.generate_sequence_diagram, name='generate_sequence_diagram'),
+    path('resultAct/', views.resultAct, name='resultAct'),
+    path('resultClass/', views.resultClass, name='resultClass'),
 ]
 
 if settings.DEBUG:

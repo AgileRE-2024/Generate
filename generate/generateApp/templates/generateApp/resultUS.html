@@ -15,7 +15,7 @@
             <img src="{% static 'images/logoo.png' %}" alt="Generate Logo" class="logo-image">
         </div>
         <nav class="nav-links">
-            <a href="#">Home</a>
+            <a href="{% url 'homepage' %}">Home</a>
             <div class="nav">
                 <a href="#">About <i class="ri-arrow-down-s-line"></i></a>
                 <a href="#">Pages <i class="ri-arrow-down-s-line"></i></a>
@@ -63,7 +63,7 @@
             
             <!-- Tombol menuju scenario -->
 
-            <a href="{% url 'inputUSS' %}" class="save-button text-decoration-none">
+            <a href="{% url 'inputUSS' user_story.id_user_story %}" class="save-button text-decoration-none">
                 Generate to Scenario
             </a>
             <!-- Tombol menuju sequence -->
@@ -72,31 +72,5 @@
             </a>
         </form>
     </div>
-
-    <script>
-        // Load values from localStorage and display them
-        const who = localStorage.getItem("who") || "Not provided";
-        const what = localStorage.getItem("what") || "Not provided";
-        const why = localStorage.getItem("why") || "Not provided";
-
-        // Combine results
-        const result = `${who},${what} ${why}`;
-        document.getElementById("result").textContent = result;
-
-        // Event listener for "Go to Project List" button
-        document.getElementById("goToProjectList").addEventListener("click", function() {
-            window.location.href = this.getAttribute("data-url");
-        });
-
-        // Event listener for "Generate to Scenario" button
-        document.getElementById("generateToScenario").addEventListener("click", function() {
-            window.location.href = this.getAttribute("data-url");
-        });
-
-        // Event listener for "Generate to Sequence" button
-        document.getElementById("generateToSequence").addEventListener("click", function() {
-            window.location.href = this.getAttribute("data-url");
-        });
-    </script>
 </body>
 </html>
