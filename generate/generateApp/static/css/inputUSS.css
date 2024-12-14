@@ -93,178 +93,73 @@ body {
 }
 
 .container {
-    padding: 20px;
-    width: 80%;
-    max-width: 800px;
-    border-radius: 15px;
-}
-
-.back {
-    color: #6e5033;
-    font-size: 1.2rem;
-    cursor: pointer;
-    margin-bottom: 15px;
-}
-
-h1 {
-    font-size: 2.5rem;
-    color: #323232;
+    background-color: #f4e7d3;
+    padding: 40px;
+    max-width: 600px;
+    width: 100%;
     text-align: center;
-    margin-bottom: 20px;
-}
-
-h1 span {
-    color: #e78b4b;
-}
-
-.scenario {
-    margin-bottom: 20px;
-    font-weight: bold;
-    font-size: 1.1rem;
-    color: #333;
-}
-
-.scenario input {
-    width: 100%;
-    padding: 10px;
-    margin-top: 5px;
-    border: none;
-    background-color: #f7d8ba;
-    color: #333;
-    font-weight: bold;
-    border-radius: 5px;
-    cursor: not-allowed;
-}
-
-.icard{
-    margin-left: 90px;
-    display: inline;
-    align-items: flex-start;
-}
-
-.icon {
-    position: relative;
-    margin-right: 10px; /* Adjust this to control the distance from the card */
-    z-index: 1;
-}
-
-.icon .plus{
-    background: none;
-    border: none;
-    color: #6e5033;
-    font-size: 1.5rem;
-    position: absolute;
-    transform: translateY(50%);
-    transform: translateX(-70%);
-    color: #e78b4b;
-    cursor: pointer;
-    margin-left: 12px;
-    top: -10%;
-}
-
-.card {
-    background-color: #fff8ed;
-    padding: 15px;
     border-radius: 10px;
-    margin-bottom: 15px;
-    margin-left: 20px;
-    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 70px; 
+}
+
+.container .back{
+    text-align: left;
+    margin: 10px 0;
+}
+
+.container h1 {
+    font-size: 2rem;
+    color: #EA8326;
+    font-style: italic;
+    font-weight: lighter;
+}
+
+.container h1 span {
+    font-weight: bold;
+    color: #000;
+    font-style: normal;
+}
+
+.user-story-scenario-form {
+    margin-top: 20px;
+}
+
+.form-group {
     position: relative;
+    margin-bottom: 20px;
+    text-align: left;
+    font-family: Montserrat;
+    font-size: 10px;
 }
 
-.section-title {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 1.2rem;
-    padding: 10px;
-    font-weight: bold;
-    color: #6e5033;
-    margin-bottom: 10px;
+label {
+    display: block;
+    font-size: 1rem;
+    color: #000;
+    margin-bottom: 5px;
 }
 
-.section-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #fdf3e8;
-    padding: 10px;
-    border-radius: 8px;
-    margin-bottom: 10px;
-}
-
-.section-content p {
-    margin: 0;
-    color: #333;
-}
-
-.text-input {
-    width: 100%; /* Atur lebar input menjadi penuh dalam container */
-    max-width: 600px; /* Batas maksimum panjang input */
-    padding: 10px; /* Tambahkan ruang di dalam input */
-    font-size: 16px; /* Sesuaikan ukuran teks */
-    border: 1px solid #ccc; /* Warna border */
-    border-radius: 4px; /* Membulatkan sudut */
-    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1); /* Tambahkan efek bayangan */
-    transition: border-color 0.3s; /* Efek transisi saat di-hover */
-}
-
-.text-input:focus {
-    border-color: #007bff; /* Warna border saat fokus */
-    outline: none; /* Hilangkan outline default */
-}
-
-.icons {
-    display: flex;
-    gap: 8px;
-}
-
-.icons button {
-    background: none;
-    border: none;
-    cursor: pointer;
-    color: #6e5033;
-    font-size: large;
-}
-
-.icons .edit {
-    display: flex;
-    gap: 8px;
-    color: #64CD8A;
-}
-
-.icons .edit:hover {
-    color: #64CD8A;
-}
-
-.icons .delete {
-    display: flex;
-    gap: 8px;
-    color: #f05454;
-    margin-left: 5px;
-}
-
-.icons .delete:hover {
-    color: #f05454;
-}
-
-.add {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+input[type="text"] {
     width: 100%;
-    padding: 10px;
-    background-color: #faead8;
-    color: #6e5033;
-    font-size: 1.1rem;
-    font-weight: bold;
-    border: 2px dashed #e78b4b;
-    border-radius: 8px;
-    cursor: pointer;
+    padding: 12px;
+    font-size: 1rem;
+    border-radius: 10px;
+    border: none;
+    background-color: #F1BD7F;
+    color: #000;
+    outline: none;
+    font-family: Source Code Pro;
+    text-align: left;
 }
 
-.add:hover {
-    background-color: #fbdcc4;
+.edit-icon {
+    position: absolute;
+    top: 70%;
+    transform: translateY(-50%);
+    font-size: 1rem;
+    color: #64CD8A;
+    cursor: pointer;
+    padding-left: 10px;
 }
 
 .save-button {

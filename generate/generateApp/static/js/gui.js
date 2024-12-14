@@ -22,13 +22,11 @@ function addPage() {
   const pageDropdownContainer = document.createElement("div");
   pageDropdownContainer.classList.add("page-dropdown");
 
-  // Create a new dropdown for "Type Page"
-  const newPageDropdown = document.createElement("select");
-  newPageDropdown.innerHTML = `
-    <option value="Type Page">Type Page</option>
-    <option value="Registration">Registration</option>
-  `;
-  newPageDropdown.classList.add("page-dropdown-select");
+  // Create a new input for "Type Page"
+  const newPageInput = document.createElement("input");
+  newPageInput.type = "text";
+  newPageInput.placeholder = "Type Page";
+  newPageInput.classList.add("page-dropdown-input");
 
   // Create a button to add more attributes to this entry
   const addPageButton = document.createElement("button");
@@ -37,7 +35,7 @@ function addPage() {
   addPageButton.onclick = (e) => addAttribute(e);
 
   // Append dropdown and button to the container
-  pageDropdownContainer.appendChild(newPageDropdown);
+  pageDropdownContainer.appendChild(newPageInput);
   pageDropdownContainer.appendChild(addPageButton);
 
   // Create an attribute section for this entry

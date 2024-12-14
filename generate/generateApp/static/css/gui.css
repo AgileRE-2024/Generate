@@ -164,6 +164,26 @@ h1 span {
     margin-bottom: 20px;
 }
 
+.form-entry .page-dropdown {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.form-entry .page-dropdown-input {
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    width: 80%;
+}
+
+.form-entry .add-page {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
 .save-button {
     margin-top: 20px;
     background-color: #c97543;

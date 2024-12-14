@@ -31,9 +31,9 @@ class UserStoryScenarioForm(forms.ModelForm):
         }
         widgets = {
             'scenario_name': forms.TextInput(attrs={'placeholder': 'Enter scenario name'}),
-            'given': forms.Textarea(attrs={'placeholder': 'Describe the initial context'}),
-            'when': forms.Textarea(attrs={'placeholder': 'Describe the triggering event'}),
-            'then': forms.Textarea(attrs={'placeholder': 'Describe the expected outcome'}),
+            'given': forms.TextInput(attrs={'placeholder': 'Describe the initial context'}),
+            'when': forms.TextInput(attrs={'placeholder': 'Describe the triggering event'}),
+            'then': forms.TextInput(attrs={'placeholder': 'Describe the expected outcome'}),
         }
 class ProjectForm(forms.ModelForm):
     class Meta:

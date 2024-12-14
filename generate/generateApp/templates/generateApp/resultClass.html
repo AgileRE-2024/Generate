@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Activity Diagram Result</title>
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/resultClass.css' %}">
 </head>
 <body>
     <!-- Result Page Content -->
@@ -17,7 +17,7 @@
         <div class="diagram-container">
             <img id="activity-diagram-result" src="{% static 'images/class.jpg' %}" alt="Activity Diagram">
         </div>
-        <a href="{% url 'homepage' %}">Go to Homepage</a>
+        <a href="{% url 'homepage' %}" class="back-to-home">Go to Homepage</a>
     </div>
     <script src="{% static 'js/class.js' %}"></script>
 </body>
