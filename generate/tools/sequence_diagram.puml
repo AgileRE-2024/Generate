@@ -1,12 +1,12 @@
 @startuml
-actor f
-boundary f
-control f
-entity f
-f -> f : f
-alt f
-f -> f : f
-else f
-f -> f : f
+actor a
+boundary b
+control c
+entity d
+a -> c : r
+alt p
+b -> d : q
+else x
+c -> a : z
 end
 @enduml
