@@ -89,7 +89,7 @@ python manage.py runserver
 
 Maka akan tampil halaman landing page dari Generate.
 
-============================================================================================
+===========================================================================
 
 Project Generate (User Story Tools) ini dibuat dan diselesaikan oleh Kelompok 2 untuk memenuhi penugasan dari mata kuliah Pembangunan Perangkat Lunak Kelas I1, Universitas Airlangga.
 Berikut merupakan anggota dari Kelompok 2. Bilamana terdapat hal yang mungkin ingin ditanyakan, serta memberikan kritik dan juga saran, bisa menghubungi kami pada email yang tertera di bawah ini.
