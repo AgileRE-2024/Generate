@@ -100,7 +100,7 @@ Berikut merupakan anggota dari Kelompok 2. Bilamana terdapat hal yang mungkin in
 4. Rahadian Febrianto  | 187221082                 ()
 5. Sara Nadya Maharani | 187221092                 ()
 
-===================================================================================
+===========================================================================
 
 Terima Kasih.
 © Project Generate (User Story Tools), 2024.
