@@ -4,7 +4,7 @@
 
 #### Git Clone
 ```bash
-[https://github.com/AgileRE-2024/Generate.git](https://github.com/AgileRE-2024/Generate.git)
+https://github.com/AgileRE-2024/Generate.git
 ```
 
 Setelah melakukan cloning pada repository Generate, buka file pada text editor seperti Visual Studio Code.
