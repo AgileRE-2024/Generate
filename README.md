@@ -13,7 +13,7 @@ https://github.com/AgileRE-2024/Generate.git
 Setelah melakukan cloning pada repository Generate, buka file pada text editor seperti Visual Studio Code.
 
 Selanjutnya, klik terminal > new terminal.
-Lalu, ubah bagian powershell pada bagian pojok kanan atas menjadi Git Bash.
+Lalu, ubah bagian powershell pada bagian pojok kanan atas terminal menjadi Git Bash.
 
 Kemudian, masuk ke dalam folder dari Generate dengan mengetikkan
 ```bash
@@ -57,7 +57,7 @@ Setelah itu, pindahkan isi di dalam folder dan letakkan pada folder generate (ti
 Bilamana sudah selesai memindahkan file, buka file pada text editor seperti Visual Studio Code.
 
 Selanjutnya, klik terminal > new terminal.
-Lalu, ubah bagian powershell pada bagian pojok kanan atas menjadi Git Bash.
+Lalu, ubah bagian powershell pada bagian pojok kanan atas terminal menjadi Git Bash.
 
 Kemudian, masuk ke dalam folder dari Generate dengan mengetikkan
 ```bash
