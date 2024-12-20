@@ -45,7 +45,7 @@ python manage.py runserver
 
 Maka akan tampil halaman landing page dari Generate.
 
-=====================================================================================================
+============================================================================================
 #### Donwload ZIP
 Unduh project melalui .zip pada bagian Code > Download ZIP.
 
